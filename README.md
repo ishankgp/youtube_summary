@@ -4,12 +4,13 @@ A modern web application that generates concise, well-structured summaries from 
 
 ## ✨ Features
 
-- **Smart Summarization**: Generates structured summaries with key points, quotes, and insights
+- **Smart Summarization**: Generates structured summaries with key points and meaningful quotes
 - **Multi-Video Support**: Process multiple YouTube videos simultaneously
-- **Language Support**: Automatic transcript extraction with multi-language support
-- **Modern UI**: Clean, accessible interface with smooth interactions
+- **Language Support**: Automatic transcript extraction with multi-language support (prioritizes Hindi and English)
+- **Modern UI**: Clean, accessible interface with smooth interactions and dark mode
 - **Real-time Processing**: Live progress updates during summary generation
 - **Interactive Refinement**: Customize and refine summaries based on feedback
+- **Error Handling**: Robust handling of invalid URLs, unavailable transcripts, and API limits
 
 ## 🚀 Live Demo
 
@@ -20,14 +21,14 @@ A modern web application that generates concise, well-structured summaries from 
 ### Frontend
 - **Next.js 14**: React framework with server components
 - **TypeScript**: Type-safe development
-- **Tailwind CSS**: Utility-first styling
-- **Shadcn/ui**: Modern UI components
+- **Tailwind CSS**: Utility-first styling with consistent spacing
+- **Shadcn/ui**: Modern, accessible UI components
 - **Lucide Icons**: Beautiful icon set
 
 ### Backend
 - **FastAPI**: High-performance Python web framework
 - **Gemini Pro**: Google's advanced language model
-- **youtube-transcript-api**: Transcript extraction
+- **youtube-transcript-api**: Reliable transcript extraction
 
 ## 📦 Installation
 
@@ -75,19 +76,20 @@ npm run dev
 2. Click "Generate Summary"
 3. Watch as the summary is generated in real-time
 4. View the structured summary with:
-   - Overall Summary
-   - Key Points
-   - Notable Quotes
-   - Detailed Insights
+   - Overall Summary: Concise overview of the video content
+   - Key Points: Important takeaways and main ideas
+   - Notable Quotes: Significant statements and timestamps
 
 ## 🎨 UI Features
 
-- Clean, modern design with consistent spacing
+- Clean, modern design with consistent spacing (space-y-6 for sections)
 - Smooth hover effects and transitions
-- Clear visual hierarchy
-- Responsive layout
+- Clear visual hierarchy with semantic headings
+- Responsive layout for all screen sizes
 - Accessible components with ARIA support
 - Dark mode support
+- Interactive elements with visual feedback
+- Error states with helpful messages
 
 ## 🤝 Contributing
 
