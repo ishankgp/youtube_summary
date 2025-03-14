@@ -109,4 +109,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Lucide](https://lucide.dev/) for icons
 
 ---
-Made with ❤️ by [Ishank Gupta](https://github.com/ishankgp)
+Made with ❤️ by [Ishan Nag](https://github.com/ishankgp)
