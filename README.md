@@ -76,36 +76,41 @@ npm run dev
 2. Click "Generate Summary"
 3. Watch as the summary is generated in real-time
 4. View the structured summary with:
-   - Overall Summary: Concise overview with light background and border
-   - Key Points: Important takeaways with subtle background
-   - Notable Quotes: Significant statements with left border and attribution
+   - Overall Summary: Concise overview with light background (bg-primary/5) and border
+   - Key Points: Important takeaways with subtle background (bg-primary/[0.03])
+   - Notable Quotes: Significant statements with left border and subtle attribution
 
 ## 🎨 UI Features
 
 - **Typography**:
-  - Bold headings with underline decoration
-  - Semi-bold section titles with subtle underlines
+  - Bold main headings with thick underline
+  - Semi-bold section titles with subtle underline
+  - Medium weight subheadings
   - Normal weight text with muted colors
-  - Smooth color transitions on hover
+  - Smooth color transitions on hover (300ms)
 
-- **Spacing**:
-  - Consistent section spacing (space-y-6)
-  - Content padding (p-4 main, p-3.5 secondary)
-  - List items with gap-2.5
-  - Quote blocks with balanced padding
+- **Spacing System**:
+  - Major sections: space-y-6
+  - Within sections: space-y-3
+  - Headings to content: mb-3
+  - List items: gap-2.5
+  - Quote attribution: mt-0.5
+  - Content padding: p-4 (main), p-3.5 (secondary)
 
 - **Visual Elements**:
   - Clear hierarchy with semantic HTML
-  - Smooth hover transitions (300ms)
+  - Consistent hover effects across components
   - Light backgrounds for interactive states
   - Proper focus indicators
   - Dark mode support
+  - Icon opacity matching hierarchy
 
 - **Accessibility**:
   - ARIA labels and roles
-  - Keyboard navigation
-  - Screen reader friendly
+  - Keyboard navigation support
+  - Screen reader optimized content
   - Semantic heading structure
+  - Clear focus states
 
 ## 🤝 Contributing
 
