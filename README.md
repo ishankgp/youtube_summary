@@ -1,27 +1,46 @@
-# YouTube Video Summarizer
+# YouTube Summary Generator 🎥 ➡️ 📝
 
-A powerful tool that generates insightful summaries from YouTube video transcripts using AI. The application supports multiple videos, automatic language detection, and summary refinement.
+A modern web application that generates concise, well-structured summaries from YouTube videos using Google's Gemini Pro AI. Built with Next.js 14, TypeScript, and FastAPI.
 
-## Features
+## ✨ Features
 
-- Process multiple YouTube videos simultaneously
-- Automatic transcript extraction and translation
-- AI-powered summarization using Gemini API
-- Interactive summary refinement
-- Support for multiple languages (prioritizes Hindi and English)
-- Modern and responsive UI built with Next.js and Tailwind CSS
+- **Smart Summarization**: Generates structured summaries with key points, quotes, and insights
+- **Multi-Video Support**: Process multiple YouTube videos simultaneously
+- **Language Support**: Automatic transcript extraction with multi-language support
+- **Modern UI**: Clean, accessible interface with smooth interactions
+- **Real-time Processing**: Live progress updates during summary generation
+- **Interactive Refinement**: Customize and refine summaries based on feedback
 
-## Setup
+## 🚀 Live Demo
+
+[Try it out here](#) <!-- Add your Vercel deployment URL -->
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js 14**: React framework with server components
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first styling
+- **Shadcn/ui**: Modern UI components
+- **Lucide Icons**: Beautiful icon set
+
+### Backend
+- **FastAPI**: High-performance Python web framework
+- **Gemini Pro**: Google's advanced language model
+- **youtube-transcript-api**: Transcript extraction
+
+## 📦 Installation
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/ishankgp/youtube_summary.git
 cd youtube_summary
 ```
 
-2. Create a `.env` file in the root directory with your Gemini API key:
-```env
-GEMINI_API_KEY=your_api_key_here
+2. Set up environment variables:
+```bash
+cp .env.example .env
+# Add your Gemini API key to .env
 ```
 
 3. Install backend dependencies:
@@ -35,66 +54,59 @@ cd frontend/my-app
 npm install
 ```
 
-## Running the Application
+## 🚀 Running Locally
 
 1. Start the backend server:
 ```bash
 python main.py
 ```
 
-2. In a new terminal, start the frontend development server:
+2. In a new terminal, start the frontend:
 ```bash
 cd frontend/my-app
 npm run dev
 ```
 
-3. Open your browser and navigate to `http://localhost:3000`
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Usage
+## 🎯 Usage
 
-1. Enter one or more YouTube URLs in the input fields
-2. Customize your summarization prompt or use one of the suggested prompts
-3. Click "Generate Summary" to process the videos
-4. View the generated summary
-5. Optionally, provide feedback to refine the summary
+1. Enter YouTube URL(s) in the input field
+2. Click "Generate Summary"
+3. Watch as the summary is generated in real-time
+4. View the structured summary with:
+   - Overall Summary
+   - Key Points
+   - Notable Quotes
+   - Detailed Insights
 
-## API Endpoints
+## 🎨 UI Features
 
-- `POST /api/summarize`: Generate summary for provided YouTube URLs
-- `POST /api/refine`: Refine an existing summary based on feedback
+- Clean, modern design with consistent spacing
+- Smooth hover effects and transitions
+- Clear visual hierarchy
+- Responsive layout
+- Accessible components with ARIA support
+- Dark mode support
 
-## Technologies Used
-
-### Backend
-- FastAPI
-- youtube-transcript-api
-- Google Generative AI (Gemini)
-- Python-dotenv
-
-### Frontend
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Shadcn/ui components
-- Lucide icons
-
-## Error Handling
-
-The application handles various error scenarios:
-- Invalid YouTube URLs
-- Unavailable transcripts
-- Language translation issues
-- API rate limits
-- Network errors
-
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## License
+## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Google Gemini Pro](https://deepmind.google/technologies/gemini/) for AI capabilities
+- [youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api) for transcript extraction
+- [Shadcn/ui](https://ui.shadcn.com/) for beautiful UI components
+- [Lucide](https://lucide.dev/) for icons
+
+---
+Made with ❤️ by [Ishank Gupta](https://github.com/ishankgp)
