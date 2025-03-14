@@ -76,20 +76,36 @@ npm run dev
 2. Click "Generate Summary"
 3. Watch as the summary is generated in real-time
 4. View the structured summary with:
-   - Overall Summary: Concise overview of the video content
-   - Key Points: Important takeaways and main ideas
-   - Notable Quotes: Significant statements and timestamps
+   - Overall Summary: Concise overview with light background and border
+   - Key Points: Important takeaways with subtle background
+   - Notable Quotes: Significant statements with left border and attribution
 
 ## 🎨 UI Features
 
-- Clean, modern design with consistent spacing (space-y-6 for sections)
-- Smooth hover effects and transitions
-- Clear visual hierarchy with semantic headings
-- Responsive layout for all screen sizes
-- Accessible components with ARIA support
-- Dark mode support
-- Interactive elements with visual feedback
-- Error states with helpful messages
+- **Typography**:
+  - Bold headings with underline decoration
+  - Semi-bold section titles with subtle underlines
+  - Normal weight text with muted colors
+  - Smooth color transitions on hover
+
+- **Spacing**:
+  - Consistent section spacing (space-y-6)
+  - Content padding (p-4 main, p-3.5 secondary)
+  - List items with gap-2.5
+  - Quote blocks with balanced padding
+
+- **Visual Elements**:
+  - Clear hierarchy with semantic HTML
+  - Smooth hover transitions (300ms)
+  - Light backgrounds for interactive states
+  - Proper focus indicators
+  - Dark mode support
+
+- **Accessibility**:
+  - ARIA labels and roles
+  - Keyboard navigation
+  - Screen reader friendly
+  - Semantic heading structure
 
 ## 🤝 Contributing
 
