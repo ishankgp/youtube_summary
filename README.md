@@ -111,3 +111,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Built with [Next.js](https://nextjs.org/)
 - UI components from [shadcn/ui](https://ui.shadcn.com/)
 - Icons from [Lucide](https://lucide.dev/)
+
+# Additional entries to consider
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.cursor/
+.history/
+*.log.*
+.tmp/
+temp/
+tmp/

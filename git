@@ -1,0 +1,2 @@
+git commit -am "message" - Stages and commits all tracked files in one step
+git push origin main - Pushes to GitHub

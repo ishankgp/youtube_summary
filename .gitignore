@@ -76,4 +76,28 @@ next-env.d.ts
 *.sublime-project
 
 # Project specific
+# Additional common entries
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.history/
+*.log.*
+.tmp/
+temp/
+tmp/
+.cache/
 .cursor/
+coverage/
+dist/
+.env.*
+logs/
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db

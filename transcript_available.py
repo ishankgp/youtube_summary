@@ -74,48 +74,71 @@ def get_transcript(
         logger.info(f"Fetching transcript for URL: {url}")
         video_id = extract_video_id(url)
         
-        # Get list of available transcripts
-        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+        try:
+            # Get list of available transcripts
+            transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+            logger.info("Successfully retrieved transcript list")
+        except Exception as e:
+            logger.error(f"Error listing transcripts: {str(e)}")
+            raise TranscriptError(
+                "Could not access video transcripts. Please check if the video exists and has captions enabled."
+            )
+
         transcript = None
         language = None
+        translated = False
+        original_language = None
         
         # Convert string to enum if needed
         if isinstance(preferred_language, str):
             preferred_language = TranscriptLanguage(preferred_language.lower())
-        
-        # Try to get transcript in preferred language
-        if preferred_language != TranscriptLanguage.AUTO:
-            try:
-                transcript = transcript_list.find_transcript([preferred_language.value])
-                language = preferred_language.value
-                logger.info(f"Found transcript in preferred language: {language}")
-            except NoTranscriptFound:
-                logger.warning(f"No transcript found in preferred language: {preferred_language}")
-        
-        # If no preferred language or not found, try language priority
-        if not transcript:
-            for lang in [TranscriptLanguage.HINDI, TranscriptLanguage.ENGLISH]:
+
+        try:
+            # First try: Get transcript in preferred language
+            if preferred_language != TranscriptLanguage.AUTO:
                 try:
-                    transcript = transcript_list.find_transcript([lang.value])
-                    language = lang.value
-                    logger.info(f"Found transcript in language: {language}")
-                    break
+                    transcript = transcript_list.find_transcript([preferred_language.value])
+                    language = preferred_language.value
+                    logger.info(f"Found transcript in preferred language: {language}")
                 except NoTranscriptFound:
-                    continue
-        
-        # If still no transcript, try any available transcript
-        if not transcript:
-            try:
-                transcript = transcript_list.find_manually_created_transcript()
-                language = transcript.language_code
-                logger.info(f"Found manual transcript in language: {language}")
-            except NoTranscriptFound:
-                transcript = transcript_list.find_generated_transcript()
-                language = transcript.language_code
-                logger.info(f"Found auto-generated transcript in language: {language}")
+                    logger.info(f"No transcript found in preferred language: {preferred_language.value}")
+
+            # Second try: Try English or Hindi
+            if not transcript:
+                for lang in [TranscriptLanguage.ENGLISH.value, TranscriptLanguage.HINDI.value]:
+                    try:
+                        transcript = transcript_list.find_transcript([lang])
+                        language = lang
+                        logger.info(f"Found transcript in language: {language}")
+                        break
+                    except NoTranscriptFound:
+                        continue
+
+            # Third try: Get any available transcript
+            if not transcript:
+                try:
+                    transcript = transcript_list.find_transcript([])
+                    language = transcript.language_code
+                    logger.info(f"Found transcript in language: {language}")
+                except NoTranscriptFound:
+                    raise NoTranscriptFound("No transcript found in any language")
+
+        except NoTranscriptFound as e:
+            logger.error(f"No transcript found for video: {url}")
+            raise TranscriptError(
+                "No transcript available for this video. Please check if captions are enabled."
+            )
+        except Exception as e:
+            logger.error(f"Error finding transcript: {str(e)}")
+            raise TranscriptError(f"Failed to find transcript: {str(e)}")
         
         # Get the actual transcript data
-        transcript_data = transcript.fetch()
+        try:
+            transcript_data = transcript.fetch()
+            logger.info("Successfully fetched transcript data")
+        except Exception as e:
+            logger.error(f"Error fetching transcript data: {str(e)}")
+            raise TranscriptError(f"Failed to fetch transcript data: {str(e)}")
         
         # Calculate video duration from last entry
         duration = 0
@@ -135,47 +158,46 @@ def get_transcript(
             "text": full_transcript.strip(),
             "language": language,
             "duration": duration,
-            "translated": False,
+            "translated": translated,
             "original_language": language
         }
         
-        # If transcript is not in preferred language and auto-translation is available
+        # Try translation if needed and available
         if (preferred_language != TranscriptLanguage.AUTO and 
-            language != preferred_language.value and 
-            preferred_language.value in transcript_list.translation_languages):
+            language != preferred_language.value):
             try:
-                translated = transcript.translate(preferred_language.value).fetch()
-                translated_text = ""
-                for entry in translated:
-                    timestamp = format_duration(float(entry['start']))
-                    text = entry['text'].strip()
-                    if text:
-                        translated_text += f"[{timestamp}] {text}\n"
+                # Check if translation is available
+                translation_languages = transcript_list.translation_languages
+                logger.info(f"Available translation languages: {translation_languages}")
                 
-                result.update({
-                    "text": translated_text.strip(),
-                    "language": preferred_language.value,
-                    "translated": True,
-                    "original_language": language
-                })
-                logger.info(f"Successfully translated transcript to {preferred_language.value}")
+                if preferred_language.value in translation_languages:
+                    translated_transcript = transcript.translate(preferred_language.value).fetch()
+                    translated_text = ""
+                    for entry in translated_transcript:
+                        timestamp = format_duration(float(entry['start']))
+                        text = entry['text'].strip()
+                        if text:
+                            translated_text += f"[{timestamp}] {text}\n"
+                    
+                    result.update({
+                        "text": translated_text.strip(),
+                        "language": preferred_language.value,
+                        "translated": True,
+                        "original_language": language
+                    })
+                    logger.info(f"Successfully translated transcript to {preferred_language.value}")
             except Exception as e:
-                logger.warning(f"Translation failed: {str(e)}")
+                logger.warning(f"Translation failed, using original transcript: {str(e)}")
         
         return result
         
     except TranscriptsDisabled:
         logger.error(f"Transcripts are disabled for video: {url}")
         raise TranscriptError(
-            "Transcripts are disabled for this video. Please try a different video."
-        )
-    except NoTranscriptFound:
-        logger.error(f"No transcript found for video: {url}")
-        raise TranscriptError(
-            "No transcript available for this video. Please try a different video."
+            "Transcripts are disabled for this video. Please check if captions are enabled."
         )
     except Exception as e:
-        logger.error(f"Error fetching transcript: {str(e)}")
+        logger.error(f"Error in get_transcript: {str(e)}")
         raise TranscriptError(f"Failed to get transcript: {str(e)}")
 
 def test_transcript():
@@ -199,7 +221,7 @@ def test_transcript():
                     print(f"Original language: {result['original_language']}")
                 print(f"First 200 chars:\n{result['text'][:200]}...")
         except TranscriptError as e:
-            print(f"Error: {e}")
+            print(f"Error: {str(e)}")
 
 if __name__ == "__main__":
     test_transcript()

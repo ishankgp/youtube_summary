@@ -1,0 +1,1902 @@
+Skip to content
+
+## Navigation Menu
+
+[Sign in](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fjdepoix%2Fyoutube-transcript-api)
+- 
+
+        Product
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        GitHub Copilot
+        Write better code with AI
+
+
+
+
+
+
+
+
+
+
+
+        Security
+        Find and fix vulnerabilities
+
+
+
+
+
+
+
+
+
+
+
+        Actions
+        Automate any workflow
+
+
+
+
+
+
+
+
+
+
+
+        Codespaces
+        Instant dev environments
+
+
+
+
+
+
+
+
+
+
+
+        Issues
+        Plan and track work
+
+
+
+
+
+
+
+
+
+
+
+        Code Review
+        Manage code changes
+
+
+
+
+
+
+
+
+
+
+
+        Discussions
+        Collaborate outside of code
+
+
+
+
+
+
+
+
+
+
+
+        Code Search
+        Find more, search less
+
+
+
+
+
+
+
+
+
+
+                    Explore
+
+
+
+      All features
+
+
+
+
+
+
+      Documentation
+
+
+
+
+
+
+
+
+      GitHub Skills
+
+
+
+
+
+
+
+  [Blog](https://github.blog)
+
+
+
+
+
+
+- 
+  [GitHub Copilot
+        Write better code with AI](https://github.com/features/copilot)
+- 
+  [Security
+        Find and fix vulnerabilities](https://github.com/features/security)
+- 
+  [Actions
+        Automate any workflow](https://github.com/features/actions)
+- 
+  [Codespaces
+        Instant dev environments](https://github.com/features/codespaces)
+- 
+  [Issues
+        Plan and track work](https://github.com/features/issues)
+- 
+  [Code Review
+        Manage code changes](https://github.com/features/code-review)
+- 
+  [Discussions
+        Collaborate outside of code](https://github.com/features/discussions)
+- 
+  [Code Search
+        Find more, search less](https://github.com/features/code-search)
+- 
+  [All features](https://github.com/features)
+- 
+  [Documentation](https://docs.github.com)
+- 
+  [GitHub Skills](https://skills.github.com)
+- 
+  [Blog](https://github.blog)
+- 
+
+        Solutions
+
+
+
+
+
+
+
+                    By company size
+
+
+
+      Enterprises
+
+
+
+
+
+
+      Small and medium teams
+
+
+
+
+
+
+      Startups
+
+
+
+
+
+
+      Nonprofits
+
+
+
+
+
+
+
+                    By use case
+
+
+
+      DevSecOps
+
+
+
+
+
+
+      DevOps
+
+
+
+
+
+
+      CI/CD
+
+
+
+
+
+
+      View all use cases
+
+
+
+
+
+
+
+
+
+                    By industry
+
+
+
+      Healthcare
+
+
+
+
+
+
+      Financial services
+
+
+
+
+
+
+      Manufacturing
+
+
+
+
+
+
+      Government
+
+
+
+
+
+
+      View all industries
+
+
+
+
+
+
+
+
+            [View all solutions](https://github.com/solutions)         
+
+
+- 
+  [Enterprises](https://github.com/enterprise)
+- 
+  [Small and medium teams](https://github.com/team)
+- 
+  [Startups](https://github.com/enterprise/startups)
+- 
+  [Nonprofits](https://github.com/solutions/industry/nonprofits)
+- 
+  [DevSecOps](https://github.com/solutions/use-case/devsecops)
+- 
+  [DevOps](https://github.com/solutions/use-case/devops)
+- 
+  [CI/CD](https://github.com/solutions/use-case/ci-cd)
+- 
+  [View all use cases](https://github.com/solutions/use-case)
+- 
+  [Healthcare](https://github.com/solutions/industry/healthcare)
+- 
+  [Financial services](https://github.com/solutions/industry/financial-services)
+- 
+  [Manufacturing](https://github.com/solutions/industry/manufacturing)
+- 
+  [Government](https://github.com/solutions/industry/government)
+- 
+  [View all industries](https://github.com/solutions/industry)
+- 
+
+        Resources
+
+
+
+
+
+
+
+                    Topics
+
+
+
+      AI
+
+
+
+
+
+
+      DevOps
+
+
+
+
+
+
+      Security
+
+
+
+
+
+
+      Software Development
+
+
+
+
+
+
+      View all
+
+
+
+
+
+
+
+
+
+                    Explore
+
+
+
+      Learning Pathways
+
+
+
+
+
+
+
+
+      Events & Webinars
+
+
+
+
+
+
+
+
+      Ebooks & Whitepapers
+
+
+
+
+
+
+      Customer Stories
+
+
+
+
+
+
+      Partners
+
+
+
+
+
+
+
+  [Executive Insights](https://github.com/solutions/executive-insights)
+
+
+
+
+
+
+- 
+  [AI](https://github.com/resources/articles/ai)
+- 
+  [DevOps](https://github.com/resources/articles/devops)
+- 
+  [Security](https://github.com/resources/articles/security)
+- 
+  [Software Development](https://github.com/resources/articles/software-development)
+- 
+  [View all](https://github.com/resources/articles)
+- 
+  [Learning Pathways](https://resources.github.com/learn/pathways)
+- 
+  [Events & Webinars](https://resources.github.com)
+- 
+  [Ebooks & Whitepapers](https://github.com/resources/whitepapers)
+- 
+  [Customer Stories](https://github.com/customer-stories)
+- 
+  [Partners](https://partner.github.com)
+- 
+  [Executive Insights](https://github.com/solutions/executive-insights)
+- 
+
+        Open Source
+
+
+
+
+
+
+
+
+
+
+
+
+        GitHub Sponsors
+        Fund open source developers
+
+
+
+
+
+
+
+
+
+
+
+
+
+        The ReadME Project
+        GitHub community articles
+
+
+
+
+
+
+
+
+                    Repositories
+
+
+
+      Topics
+
+
+
+
+
+
+      Trending
+
+
+
+
+
+  [Collections](https://github.com/collections)
+
+
+
+
+
+
+-
+
+## Navigation Menu
+
+[GitHub Sponsors
+        Fund open source developers](https://github.com/sponsors)
+- 
+  [The ReadME Project
+        GitHub community articles](https://github.com/readme)
+- 
+  [Topics](https://github.com/topics)
+- 
+  [Trending](https://github.com/trending)
+- 
+  [Collections](https://github.com/collections)
+- 
+
+        Enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Enterprise platform
+        AI-powered developer platform
+
+
+
+
+
+
+
+
+                    Available add-ons
+
+
+
+
+
+
+
+        Advanced Security
+        Enterprise-grade security features
+
+
+
+
+
+
+
+
+
+
+
+        Copilot for business
+        Enterprise-grade AI features
+
+
+
+
+
+
+  [Premium Support
+        Enterprise-grade 24/7 support](https://github.com/premium-support)
+
+
+
+
+
+
+- 
+  [Enterprise platform
+        AI-powered developer platform](https://github.com/enterprise)
+- 
+  [Advanced Security
+        Enterprise-grade security features](https://github.com/enterprise/advanced-security)
+- 
+  [Copilot for business
+        Enterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+- 
+  [Premium Support
+        Enterprise-grade 24/7 support](https://github.com/premium-support)
+- 
+    [Pricing](https://github.com/pricing)
+
+- 
+  [GitHub Copilot
+        Write better code with AI](https://github.com/features/copilot)
+- 
+  [Security
+        Find and fix vulnerabilities](https://github.com/features/security)
+- 
+  [Actions
+        Automate any workflow](https://github.com/features/actions)
+- 
+  [Codespaces
+        Instant dev environments](https://github.com/features/codespaces)
+- 
+  [Issues
+        Plan and track work](https://github.com/features/issues)
+- 
+  [Code Review
+        Manage code changes](https://github.com/features/code-review)
+- 
+  [Discussions
+        Collaborate outside of code](https://github.com/features/discussions)
+- 
+  [Code Search
+        Find more, search less](https://github.com/features/code-search)
+[GitHub Copilot
+        Write better code with AI](https://github.com/features/copilot)
+[Security
+        Find and fix vulnerabilities](https://github.com/features/security)
+[Actions
+        Automate any workflow](https://github.com/features/actions)
+[Codespaces
+        Instant dev environments](https://github.com/features/codespaces)
+[Issues
+        Plan and track work](https://github.com/features/issues)
+[Code Review
+        Manage code changes](https://github.com/features/code-review)
+[Discussions
+        Collaborate outside of code](https://github.com/features/discussions)
+[Code Search
+        Find more, search less](https://github.com/features/code-search)
+- 
+  [All features](https://github.com/features)
+- 
+  [Documentation](https://docs.github.com)
+- 
+  [GitHub Skills](https://skills.github.com)
+- 
+  [Blog](https://github.blog)
+[All features](https://github.com/features)
+[Documentation](https://docs.github.com)
+[GitHub Skills](https://skills.github.com)
+[Blog](https://github.blog)
+- 
+  [Enterprises](https://github.com/enterprise)
+- 
+  [Small and medium teams](https://github.com/team)
+- 
+  [Startups](https://github.com/enterprise/startups)
+- 
+  [Nonprofits](https://github.com/solutions/industry/nonprofits)
+[Enterprises](https://github.com/enterprise)
+[Small and medium teams](https://github.com/team)
+[Startups](https://github.com/enterprise/startups)
+[Nonprofits](https://github.com/solutions/industry/nonprofits)
+- 
+  [DevSecOps](https://github.com/solutions/use-case/devsecops)
+- 
+  [DevOps](https://github.com/solutions/use-case/devops)
+- 
+  [CI/CD](https://github.com/solutions/use-case/ci-cd)
+- 
+  [View all use cases](https://github.com/solutions/use-case)
+[DevSecOps](https://github.com/solutions/use-case/devsecops)
+[DevOps](https://github.com/solutions/use-case/devops)
+[CI/CD](https://github.com/solutions/use-case/ci-cd)
+[View all use cases](https://github.com/solutions/use-case)
+- 
+  [Healthcare](https://github.com/solutions/industry/healthcare)
+- 
+  [Financial services](https://github.com/solutions/industry/financial-services)
+- 
+  [Manufacturing](https://github.com/solutions/industry/manufacturing)
+- 
+  [Government](https://github.com/solutions/industry/government)
+- 
+  [View all industries](https://github.com/solutions/industry)
+[Healthcare](https://github.com/solutions/industry/healthcare)
+[Financial services](https://github.com/solutions/industry/financial-services)
+[Manufacturing](https://github.com/solutions/industry/manufacturing)
+[Government](https://github.com/solutions/industry/government)
+
+## Navigation Menu
+
+[View all industries](https://github.com/solutions/industry)
+[View all solutions](https://github.com/solutions)
+- 
+  [AI](https://github.com/resources/articles/ai)
+- 
+  [DevOps](https://github.com/resources/articles/devops)
+- 
+  [Security](https://github.com/resources/articles/security)
+- 
+  [Software Development](https://github.com/resources/articles/software-development)
+- 
+  [View all](https://github.com/resources/articles)
+[AI](https://github.com/resources/articles/ai)
+[DevOps](https://github.com/resources/articles/devops)
+[Security](https://github.com/resources/articles/security)
+[Software Development](https://github.com/resources/articles/software-development)
+[View all](https://github.com/resources/articles)
+- 
+  [Learning Pathways](https://resources.github.com/learn/pathways)
+- 
+  [Events & Webinars](https://resources.github.com)
+- 
+  [Ebooks & Whitepapers](https://github.com/resources/whitepapers)
+- 
+  [Customer Stories](https://github.com/customer-stories)
+- 
+  [Partners](https://partner.github.com)
+- 
+  [Executive Insights](https://github.com/solutions/executive-insights)
+[Learning Pathways](https://resources.github.com/learn/pathways)
+[Events & Webinars](https://resources.github.com)
+[Ebooks & Whitepapers](https://github.com/resources/whitepapers)
+[Customer Stories](https://github.com/customer-stories)
+[Partners](https://partner.github.com)
+[Executive Insights](https://github.com/solutions/executive-insights)
+- 
+  [GitHub Sponsors
+        Fund open source developers](https://github.com/sponsors)
+[GitHub Sponsors
+        Fund open source developers](https://github.com/sponsors)
+- 
+  [The ReadME Project
+        GitHub community articles](https://github.com/readme)
+[The ReadME Project
+        GitHub community articles](https://github.com/readme)
+- 
+  [Topics](https://github.com/topics)
+- 
+  [Trending](https://github.com/trending)
+- 
+  [Collections](https://github.com/collections)
+[Topics](https://github.com/topics)
+[Trending](https://github.com/trending)
+[Collections](https://github.com/collections)
+- 
+  [Enterprise platform
+        AI-powered developer platform](https://github.com/enterprise)
+[Enterprise platform
+        AI-powered developer platform](https://github.com/enterprise)
+- 
+  [Advanced Security
+        Enterprise-grade security features](https://github.com/enterprise/advanced-security)
+- 
+  [Copilot for business
+        Enterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+- 
+  [Premium Support
+        Enterprise-grade 24/7 support](https://github.com/premium-support)
+[Advanced Security
+        Enterprise-grade security features](https://github.com/enterprise/advanced-security)
+[Copilot for business
+        Enterprise-grade AI features](https://github.com/features/copilot/copilot-business)
+[Premium Support
+        Enterprise-grade 24/7 support](https://github.com/premium-support)
+[Pricing](https://github.com/pricing)
+
+# Search code, repositories, users, issues, pull requests...
+[Search syntax tips](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax)
+
+# Provide feedback
+We read every piece of feedback, and take your input very seriously.
+
+## Use saved searches to filter your results more quickly
+
+To see all available qualifiers, see our [documentation](https://docs.github.com/search-github/github-code-search/understanding-github-code-search-syntax).
+[Sign in](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fjdepoix%2Fyoutube-transcript-api)
+[Sign up](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=jdepoix%2Fyoutube-transcript-api)
+[Reload](https://github.com/jdepoix/youtube-transcript-api)
+[Reload](https://github.com/jdepoix/youtube-transcript-api)
+[Reload](https://github.com/jdepoix/youtube-transcript-api)
+[jdepoix](https://github.com/jdepoix)
+[youtube-transcript-api](https://github.com/jdepoix/youtube-transcript-api)
+- 
+
+
+- 
+            [Notifications](https://github.com/login?return_to=%2Fjdepoix%2Fyoutube-transcript-api)    You must be signed in to change notification settings
+
+
+- 
+          [Fork
+    417](https://github.com/login?return_to=%2Fjdepoix%2Fyoutube-transcript-api)
+
+- 
+
+        [Star
+          3.6k](https://github.com/login?return_to=%2Fjdepoix%2Fyoutube-transcript-api)
+
+[Notifications](https://github.com/login?return_to=%2Fjdepoix%2Fyoutube-transcript-api)
+[Fork
+    417](https://github.com/login?return_to=%2Fjdepoix%2Fyoutube-transcript-api)
+[Star
+          3.6k](https://github.com/login?return_to=%2Fjdepoix%2Fyoutube-transcript-api)
+This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
+
+### License
+
+[MIT license](https://github.com/jdepoix/youtube-transcript-api/blob/master/LICENSE)
+[3.6k
+          stars](https://github.com/jdepoix/youtube-transcript-api/stargazers)
+[417
+          forks](https://github.com/jdepoix/youtube-transcript-api/forks)
+[Branches](https://github.com/jdepoix/youtube-transcript-api/branches)
+[Tags](https://github.com/jdepoix/youtube-transcript-api/tags)
+[Activity](https://github.com/jdepoix/youtube-transcript-api/activity)
+[Star](https://github.com/login?return_to=%2Fjdepoix%2Fyoutube-transcript-api)
+[Notifications](https://github.com/login?return_to=%2Fjdepoix%2Fyoutube-transcript-api)
+- 
+  [Code](https://github.com/jdepoix/youtube-transcript-api)
+- 
+  [Issues
+          11](https://github.com/jdepoix/youtube-transcript-api/issues)
+- 
+  [Pull requests
+          2](https://github.com/jdepoix/youtube-transcript-api/pulls)
+- 
+  [Discussions](https://github.com/jdepoix/youtube-transcript-api/discussions)
+- 
+  [Actions](https://github.com/jdepoix/youtube-transcript-api/actions)
+- 
+  [Projects
+          0](https://github.com/jdepoix/youtube-transcript-api/projects)
+- 
+  [Security](https://github.com/jdepoix/youtube-transcript-api/security)
+- 
+  [Insights](https://github.com/jdepoix/youtube-transcript-api/pulse)
+[Code](https://github.com/jdepoix/youtube-transcript-api)
+[Issues
+          11](https://github.com/jdepoix/youtube-transcript-api/issues)
+[Pull requests
+          2](https://github.com/jdepoix/youtube-transcript-api/pulls)
+[Discussions](https://github.com/jdepoix/youtube-transcript-api/discussions)
+[Actions](https://github.com/jdepoix/youtube-transcript-api/actions)
+[Projects
+          0](https://github.com/jdepoix/youtube-transcript-api/projects)
+[Security](https://github.com/jdepoix/youtube-transcript-api/security)
+[Insights](https://github.com/jdepoix/youtube-transcript-api/pulse)
+- 
+
+
+    [Code](https://github.com/jdepoix/youtube-transcript-api)
+
+
+- 
+
+
+    [Issues](https://github.com/jdepoix/youtube-transcript-api/issues)
+
+
+- 
+
+
+    [Pull requests](https://github.com/jdepoix/youtube-transcript-api/pulls)
+
+
+- 
+
+
+    [Discussions](https://github.com/jdepoix/youtube-transcript-api/discussions)
+
+
+- 
+
+
+    [Actions](https://github.com/jdepoix/youtube-transcript-api/actions)
+
+
+- 
+
+
+    [Projects](https://github.com/jdepoix/youtube-transcript-api/projects)
+
+
+- 
+
+
+    [Security](https://github.com/jdepoix/youtube-transcript-api/security)
+
+
+- 
+
+
+    [Insights](https://github.com/jdepoix/youtube-transcript-api/pulse)
+
+
+[Code](https://github.com/jdepoix/youtube-transcript-api)
+[Issues](https://github.com/jdepoix/youtube-transcript-api/issues)
+[Pull requests](https://github.com/jdepoix/youtube-transcript-api/pulls)
+[Discussions](https://github.com/jdepoix/youtube-transcript-api/discussions)
+[Actions](https://github.com/jdepoix/youtube-transcript-api/actions)
+[Projects](https://github.com/jdepoix/youtube-transcript-api/projects)
+[Security](https://github.com/jdepoix/youtube-transcript-api/security)
+[Insights](https://github.com/jdepoix/youtube-transcript-api/pulse)
+
+# jdepoix/youtube-transcript-api
+
+[Branches](https://github.com/jdepoix/youtube-transcript-api/branches)
+[Tags](https://github.com/jdepoix/youtube-transcript-api/tags)
+
+## History
+[328 Commits](https://github.com/jdepoix/youtube-transcript-api/commits/master/)
+[.github](https://github.com/jdepoix/youtube-transcript-api/tree/master/.github)
+[.github](https://github.com/jdepoix/youtube-transcript-api/tree/master/.github)
+[youtube_transcript_api](https://github.com/jdepoix/youtube-transcript-api/tree/master/youtube_transcript_api)
+[youtube_transcript_api](https://github.com/jdepoix/youtube-transcript-api/tree/master/youtube_transcript_api)
+[.gitignore](https://github.com/jdepoix/youtube-transcript-api/blob/master/.gitignore)
+[.gitignore](https://github.com/jdepoix/youtube-transcript-api/blob/master/.gitignore)
+[LICENSE](https://github.com/jdepoix/youtube-transcript-api/blob/master/LICENSE)
+[LICENSE](https://github.com/jdepoix/youtube-transcript-api/blob/master/LICENSE)
+[README.md](https://github.com/jdepoix/youtube-transcript-api/blob/master/README.md)
+[README.md](https://github.com/jdepoix/youtube-transcript-api/blob/master/README.md)
+[poetry.lock](https://github.com/jdepoix/youtube-transcript-api/blob/master/poetry.lock)
+[poetry.lock](https://github.com/jdepoix/youtube-transcript-api/blob/master/poetry.lock)
+[pyproject.toml](https://github.com/jdepoix/youtube-transcript-api/blob/master/pyproject.toml)
+[pyproject.toml](https://github.com/jdepoix/youtube-transcript-api/blob/master/pyproject.toml)
+
+## Repository files navigation
+- README
+- MIT license
+README
+MIT license
+
+# ✨ YouTube Transcript API ✨
+
+This is a python API which allows you to retrieve the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles, supports translating subtitles and it does not require a headless browser, like other selenium based solutions do!
+Maintenance of this project is made possible by all the contributors and sponsors. If you'd like to sponsor this project and have your avatar or company logo appear below [click here](https://github.com/sponsors/jdepoix). 💖
+
+## Install
+It is recommended to [install this module by using pip](https://pypi.org/project/youtube-transcript-api/):
+
+```
+pip install youtube-transcript-api
+```
+
+
+```
+pip install youtube-transcript-api
+```
+
+You can either integrate this module into an existing application or just use it via a CLI.
+
+## API
+The easiest way to get a transcript for a given video is to execute:
+
+```
+from youtube_transcript_api import YouTubeTranscriptApi
+
+ytt_api = YouTubeTranscriptApi()
+ytt_api.fetch(video_id)
+```
+
+Note: By default, this will try to access the English transcript of the video. If your video has a different
+language, or you are interested in fetching a transcript in a different language, please read the section below.
+Note: Pass in the video ID, NOT the video URL. For a video with the URL https://www.youtube.com/watch?v=12345
+the ID is 12345.
+
+```
+https://www.youtube.com/watch?v=12345
+```
+
+
+```
+12345
+```
+
+This will return a FetchedTranscript object looking somewhat like this:
+
+```
+FetchedTranscript
+```
+
+
+```
+FetchedTranscript(
+    snippets=[
+        FetchedTranscriptSnippet(
+            text="Hey there",
+            start=0.0,
+            duration=1.54,
+        ),
+        FetchedTranscriptSnippet(
+            text="how are you",
+            start=1.54,
+            duration=4.16,
+        ),
+        # ...
+    ],
+    video_id="12345",
+    language="English",
+    language_code="en",
+    is_generated=False,
+)
+```
+
+This object implements most interfaces of a List:
+
+```
+List
+```
+
+
+```
+ytt_api = YouTubeTranscriptApi()
+fetched_transcript = ytt_api.fetch(video_id)
+
+# is iterable
+for snippet in fetched_transcript:
+    print(snippet.text)
+
+# indexable
+last_snippet = fetched_transcript[-1]
+
+# provides a length
+snippet_count = len(fetched_transcript)
+```
+
+If you prefer to handle the raw transcript data you can call fetched_transcript.to_raw_data(), which will return
+a list of dictionaries:
+
+```
+fetched_transcript.to_raw_data()
+```
+
+
+```
+[
+    {
+        'text': 'Hey there',
+        'start': 0.0,
+        'duration': 1.54
+    },
+    {
+        'text': 'how are you',
+        'start': 1.54
+        'duration': 4.16
+    },
+    # ...
+]
+```
+
+### Retrieve different languages
+You can add the languages param if you want to make sure the transcripts are retrieved in your desired language
+(it defaults to english).
+
+```
+languages
+```
+
+
+```
+YouTubeTranscriptApi().fetch(video_id, languages=['de', 'en'])
+```
+
+It's a list of language codes in a descending priority. In this example it will first try to fetch the german
+transcript ('de') and then fetch the english transcript ('en') if it fails to do so. If you want to find out
+which languages are available first, have a look at list_transcripts().
+
+```
+'de'
+```
+
+
+```
+'en'
+```
+
+
+```
+list_transcripts()
+```
+
+If you only want one language, you still need to format the languages argument as a list
+
+```
+languages
+```
+
+
+```
+YouTubeTranscriptApi().fetch(video_id, languages=['de'])
+```
+
+### Preserve formatting
+You can also add preserve_formatting=True if you'd like to keep HTML formatting elements such as <i> (italics)
+and <b> (bold).
+
+```
+preserve_formatting=True
+```
+
+
+```
+<i>
+```
+
+
+```
+<b>
+```
+
+
+```
+YouTubeTranscriptApi().fetch(video_ids, languages=['de', 'en'], preserve_formatting=True)
+```
+
+### List available transcripts
+If you want to list all transcripts which are available for a given video you can call:
+
+```
+ytt_api = YouTubeTranscriptApi()
+transcript_list = ytt_api.list_transcripts(video_id)
+```
+
+This will return a TranscriptList object which is iterable and provides methods to filter the list of transcripts for
+specific languages and types, like:
+
+```
+TranscriptList
+```
+
+
+```
+transcript = transcript_list.find_transcript(['de', 'en'])
+```
+
+By default this module always chooses manually created transcripts over automatically created ones, if a transcript in
+the requested language is available both manually created and generated. The TranscriptList allows you to bypass this
+default behaviour by searching for specific transcript types:
+
+```
+TranscriptList
+```
+
+
+```
+# filter for manually created transcripts
+transcript = transcript_list.find_manually_created_transcript(['de', 'en'])
+
+# or automatically generated ones
+transcript = transcript_list.find_generated_transcript(['de', 'en'])
+```
+
+The methods find_generated_transcript, find_manually_created_transcript, find_transcript return Transcript
+objects. They contain metadata regarding the transcript:
+
+```
+find_generated_transcript
+```
+
+
+```
+find_manually_created_transcript
+```
+
+
+```
+find_transcript
+```
+
+
+```
+Transcript
+```
+
+
+```
+print(
+    transcript.video_id,
+    transcript.language,
+    transcript.language_code,
+    # whether it has been manually created or generated by YouTube
+    transcript.is_generated,
+    # whether this transcript can be translated or not
+    transcript.is_translatable,
+    # a list of languages the transcript can be translated to
+    transcript.translation_languages,
+)
+```
+
+and provide the method, which allows you to fetch the actual transcript data:
+
+```
+transcript.fetch()
+```
+
+This returns a FetchedTranscript object, just like YouTubeTranscriptApi().fetch() does.
+
+```
+FetchedTranscript
+```
+
+
+```
+YouTubeTranscriptApi().fetch()
+```
+
+### Translate transcript
+YouTube has a feature which allows you to automatically translate subtitles. This module also makes it possible to
+access this feature. To do so Transcript objects provide a translate() method, which returns a new translated
+Transcript object:
+
+```
+Transcript
+```
+
+
+```
+translate()
+```
+
+
+```
+Transcript
+```
+
+
+```
+transcript = transcript_list.find_transcript(['en'])
+translated_transcript = transcript.translate('de')
+print(translated_transcript.fetch())
+```
+
+### By example
+
+```
+from youtube_transcript_api import YouTubeTranscriptApi
+
+ytt_api = YouTubeTranscriptApi()
+
+# retrieve the available transcripts
+transcript_list = ytt_api.list('video_id')
+
+# iterate over all available transcripts
+for transcript in transcript_list:
+
+    # the Transcript object provides metadata properties
+    print(
+        transcript.video_id,
+        transcript.language,
+        transcript.language_code,
+        # whether it has been manually created or generated by YouTube
+        transcript.is_generated,
+        # whether this transcript can be translated or not
+        transcript.is_translatable,
+        # a list of languages the transcript can be translated to
+        transcript.translation_languages,
+    )
+
+    # fetch the actual transcript data
+    print(transcript.fetch())
+
+    # translating the transcript will return another transcript object
+    print(transcript.translate('en').fetch())
+
+# you can also directly filter for the language you are looking for, using the transcript list
+transcript = transcript_list.find_transcript(['de', 'en'])  
+
+# or just filter for manually created transcripts  
+transcript = transcript_list.find_manually_created_transcript(['de', 'en'])  
+
+# or automatically generated ones  
+transcript = transcript_list.find_generated_transcript(['de', 'en'])
+```
+
+## Working around IP bans (RequestBlocked or IpBlocked exception)
+
+```
+RequestBlocked
+```
+
+
+```
+IpBlocked
+```
+
+Unfortunately, YouTube has started blocking most IPs that are known to belong to cloud providers (like AWS, Google Cloud
+Platform, Azure, etc.), which means you will most likely run into ReuquestBlocked or IpBlocked exceptions when
+deploying your code to any cloud solutions. Same can happen to the IP of your self-hosted solution, if you are doing
+too many requests. You can work around these IP bans using proxies. However, since YouTube will ban static proxies
+after extended use, going for rotating residential proxies provide is the most reliable option.
+
+```
+ReuquestBlocked
+```
+
+
+```
+IpBlocked
+```
+
+There are different providers that offer rotating residential proxies, but after testing different
+offerings I have found [Webshare](https://www.webshare.io/?referral_code=w0xno53eb50g) to be the most reliable and have
+therefore integrated it into this module, to make setting it up as easy as possible.
+
+### Using [Webshare](https://www.webshare.io/?referral_code=w0xno53eb50g)
+[Webshare](https://www.webshare.io/?referral_code=w0xno53eb50g)
+Once you have created a Webshare account and purchased a
+"Residential Proxy" package that suits your workload, open the
+[Webshare Proxy Settings](https://dashboard.webshare.io/proxy/settings) to retrieve your "Proxy Username" and
+"Proxy Password". Using this information you can initialize the YouTubeTranscriptApi as follows:
+
+```
+YouTubeTranscriptApi
+```
+
+
+```
+from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.proxies import WebshareProxyConfig
+
+ytt_api = YouTubeTranscriptApi(
+    proxy_config=WebshareProxyConfig(
+        proxy_username="<proxy-username>",
+        proxy_password="<proxy-password>",
+    )
+)
+
+# all requests done by ytt_api will now be proxied through Webshare
+ytt_api.fetch(video_id)
+```
+
+Using the WebshareProxyConfig will default to using rotating residential proxies and requires no further
+configuration.
+
+```
+WebshareProxyConfig
+```
+
+Note that referral links are used here and any purchases made through these links will support this Open Source
+project, which is very much appreciated! 💖😊🙏💖
+However, you are of course free to integrate your own proxy solution using the GenericProxyConfig class, if you
+prefer using another provider or want to implement your own solution, as covered by the following section.
+
+```
+GenericProxyConfig
+```
+
+### Using other Proxy solutions
+Alternatively to using Webshare, you can set up any generic HTTP/HTTPS/SOCKS proxy using the
+GenericProxyConfig class:
+
+```
+GenericProxyConfig
+```
+
+
+```
+from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.proxies import GenericProxyConfig
+
+ytt_api = YouTubeTranscriptApi(
+    proxy_config=GenericProxyConfig(
+        http_url="http://user:pass@my-custom-proxy.org:port",
+        https_url="https://user:pass@my-custom-proxy.org:port",
+    )
+)
+
+# all requests done by ytt_api will now be proxied using the defined proxy URLs
+ytt_api.fetch(video_id)
+```
+
+Be aware that using a proxy doesn't guarantee that you won't be blocked, as YouTube can always block the IP of your
+proxy! Therefore, you should always choose a solution that rotates through a pool of proxy addresses, if you want to
+maximize reliability.
+
+## Overwriting request defaults
+When initializing a YouTubeTranscriptApi object, it will create a requests.Session which will be used for all
+HTTP(S) request. This allows for caching cookies when retrieving multiple requests. However, you can optionally pass a
+requests.Session object into its constructor, if you manually want to share cookies between different instances of
+YouTubeTranscriptApi, overwrite defaults, set custom headers, specify SSL certificates, etc.
+
+```
+YouTubeTranscriptApi
+```
+
+
+```
+requests.Session
+```
+
+
+```
+requests.Session
+```
+
+
+```
+YouTubeTranscriptApi
+```
+
+
+```
+from requests import Session
+
+http_client = Session()
+
+# set custom header
+http_client.headers.update({"Accept-Encoding": "gzip, deflate"})
+
+# set path to CA_BUNDLE file
+http_client.verify = "/path/to/certfile"
+
+ytt_api = YouTubeTranscriptApi(http_client=session)
+ytt_api.fetch(video_id)
+
+# share same Session between two instances of YouTubeTranscriptApi
+ytt_api_2 = YouTubeTranscriptApi(http_client=session)
+# now shares cookies with ytt_api
+ytt_api_2.fetch(video_id)
+```
+
+## Cookie Authentication
+Some videos are age restricted, so this module won't be able to access those videos without some sort of
+authentication. To do this, you will need to have access to the desired video in a browser. Then, you will need to
+download that pages cookies into a text file. You can use the Chrome extension
+Cookie-Editor and
+select "Netscape" during export, or the Firefox extension [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/).
+Once you have that, you can use the following to access age-restricted videos' captions like so.
+
+```
+ytt_api = YouTubeTranscriptApi(cookie_path='/path/to/your/cookies.txt')
+ytt_api.fetch(video_id)
+```
+
+## Using Formatters
+Formatters are meant to be an additional layer of processing of the transcript you pass it. The goal is to convert a
+FetchedTranscript object into a consistent string of a given "format". Such as a basic text (.txt) or even formats
+that have a defined specification such as JSON (.json), WebVTT (.vtt), SRT (.srt), Comma-separated format
+(.csv), etc...
+
+```
+FetchedTranscript
+```
+
+
+```
+.txt
+```
+
+
+```
+.json
+```
+
+
+```
+.vtt
+```
+
+
+```
+.srt
+```
+
+
+```
+.csv
+```
+
+The formatters submodule provides a few basic formatters, which can be used as is, or extended to your needs:
+
+```
+formatters
+```
+
+- JSONFormatter
+- PrettyPrintFormatter
+- TextFormatter
+- WebVTTFormatter
+- SRTFormatter
+Here is how to import from the formatters module.
+
+```
+formatters
+```
+
+
+```
+# the base class to inherit from when creating your own formatter.
+from youtube_transcript_api.formatters import Formatter
+
+# some provided subclasses, each outputs a different string format.
+from youtube_transcript_api.formatters import JSONFormatter
+from youtube_transcript_api.formatters import TextFormatter
+from youtube_transcript_api.formatters import WebVTTFormatter
+from youtube_transcript_api.formatters import SRTFormatter
+```
+
+### Formatter Example
+Let's say we wanted to retrieve a transcript and store it to a JSON file. That would look something like this:
+
+```
+# your_custom_script.py
+
+from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.formatters import JSONFormatter
+
+ytt_api = YouTubeTranscriptApi()
+transcript = ytt_api.fetch(video_id)
+
+formatter = JSONFormatter()
+
+# .format_transcript(transcript) turns the transcript into a JSON string.
+json_formatted = formatter.format_transcript(transcript)
+
+# Now we can write it out to a file.
+with open('your_filename.json', 'w', encoding='utf-8') as json_file:
+    json_file.write(json_formatted)
+
+# Now should have a new JSON file that you can easily read back into Python.
+```
+
+Passing extra keyword arguments
+Since JSONFormatter leverages json.dumps() you can also forward keyword arguments into
+.format_transcript(transcript) such as making your file output prettier by forwarding the indent=2 keyword argument.
+
+```
+json.dumps()
+```
+
+
+```
+.format_transcript(transcript)
+```
+
+
+```
+indent=2
+```
+
+
+```
+json_formatted = JSONFormatter().format_transcript(transcript, indent=2)
+```
+
+### Custom Formatter Example
+You can implement your own formatter class. Just inherit from the Formatter base class and ensure you implement the
+format_transcript(self, transcript: FetchedTranscript, **kwargs) -> str and
+format_transcripts(self, transcripts: List[FetchedTranscript], **kwargs) -> str methods which should ultimately
+return a string when called on your formatter instance.
+
+```
+Formatter
+```
+
+
+```
+format_transcript(self, transcript: FetchedTranscript, **kwargs) -> str
+```
+
+
+```
+format_transcripts(self, transcripts: List[FetchedTranscript], **kwargs) -> str
+```
+
+
+```
+class MyCustomFormatter(Formatter):
+    def format_transcript(self, transcript: FetchedTranscript, **kwargs) -> str:
+        # Do your custom work in here, but return a string.
+        return 'your processed output data as a string.'
+
+    def format_transcripts(self, transcripts: List[FetchedTranscript], **kwargs) -> str:
+        # Do your custom work in here to format a list of transcripts, but return a string.
+        return 'your processed output data as a string.'
+```
+
+## CLI
+
+Execute the CLI script using the video ids as parameters and the results will be printed out to the command line:
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ...
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ...
+```
+
+The CLI also gives you the option to provide a list of preferred languages:
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages de en
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages de en
+```
+
+You can also specify if you want to exclude automatically generated or manually created subtitles:
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages de en --exclude-generated
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages de en --exclude-manually-created
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages de en --exclude-generated
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages de en --exclude-manually-created
+```
+
+If you would prefer to write it into a file or pipe it into another application, you can also output the results as
+json using the following line:
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages de en --format json > transcripts.json
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages de en --format json > transcripts.json
+```
+
+Translating transcripts using the CLI is also possible:
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages en --translate de
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> ... --languages en --translate de
+```
+
+If you are not sure which languages are available for a given video you can call, to list all available transcripts:
+
+```
+youtube_transcript_api --list-transcripts <first_video_id>
+```
+
+
+```
+youtube_transcript_api --list-transcripts <first_video_id>
+```
+
+If a video's ID starts with a hyphen you'll have to mask the hyphen using \ to prevent the CLI from mistaking it for
+a argument name. For example to get the transcript for the video with the ID -abc123 run:
+
+```
+\
+```
+
+
+```
+-abc123
+```
+
+
+```
+youtube_transcript_api "\-abc123"
+```
+
+
+```
+youtube_transcript_api "\-abc123"
+```
+
+### Working around IP bans using the CLI
+If you are running into ReqestBlocked or IpBlocked errors, because YouTube blocks your IP, you can work around this
+using residential proxies as explained in
+Working around IP bans. To use
+Webshare residential proxies through the CLI, you will have to
+create a Webshare account and purchase a residential
+proxy package that suits your workload. Then you can use the "Proxy Username" and "Proxy Password" which you can find
+in your [Webshare Proxy Settings](https://dashboard.webshare.io/proxy/settings), to run the following command:
+
+```
+ReqestBlocked
+```
+
+
+```
+IpBlocked
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> --webshare-proxy-username "username" --webshare-proxy-password "password"
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> --webshare-proxy-username "username" --webshare-proxy-password "password"
+```
+
+If you prefer to use another proxy solution, you can set up a generic HTTP/HTTPS proxy using the following command:
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> --http-proxy http://user:pass@domain:port --https-proxy https://user:pass@domain:port
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> --http-proxy http://user:pass@domain:port --https-proxy https://user:pass@domain:port
+```
+
+### Cookie Authentication using the CLI
+To authenticate using cookies through the CLI as explained in Cookie Authentication run:
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> --cookies /path/to/your/cookies.txt
+```
+
+
+```
+youtube_transcript_api <first_video_id> <second_video_id> --cookies /path/to/your/cookies.txt
+```
+
+## Warning
+This code uses an undocumented part of the YouTube API, which is called by the YouTube web-client. So there is no
+guarantee that it won't stop working tomorrow, if they change how things work. I will however do my best to make things
+working again as soon as possible if that happens. So if it stops working, let me know!
+
+## Contributing
+To setup the project locally run the following (requires [poetry](https://python-poetry.org/docs/) to be installed):
+
+```
+poetry install --with test,dev
+```
+
+There's [poe](https://github.com/nat-n/poethepoet?tab=readme-ov-file) tasks to run tests, coverage, the
+linter and formatter (you'll need to pass all of those for the build to pass):
+
+```
+poe test
+poe coverage
+poe format
+poe lint
+```
+
+If you just want to make sure that your code passes all the necessary checks to get a green build, you can simply run:
+
+```
+poe precommit
+```
+
+## Donations
+If this project makes you happy by reducing your development time, you can make me happy by treating me to a cup of
+coffee, or become a [Sponsor of this project](https://github.com/sponsors/jdepoix) :)
+
+## About
+This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles and it does not require an API key nor a headless browser, like other selenium based solutions do!
+
+### Topics
+[python](https://github.com/topics/python)
+[cli](https://github.com/topics/cli)
+[youtube](https://github.com/topics/youtube)
+[youtube-video](https://github.com/topics/youtube-video)
+[youtube-api](https://github.com/topics/youtube-api)
+[captions](https://github.com/topics/captions)
+[subtitles](https://github.com/topics/subtitles)
+[transcript](https://github.com/topics/transcript)
+[subtitle](https://github.com/topics/subtitle)
+[transcripts](https://github.com/topics/transcripts)
+[asr](https://github.com/topics/asr)
+[youtube-subtitles](https://github.com/topics/youtube-subtitles)
+[youtube-transcripts](https://github.com/topics/youtube-transcripts)
+[youtube-captions](https://github.com/topics/youtube-captions)
+[youtube-transcript](https://github.com/topics/youtube-transcript)
+[translating-transcripts](https://github.com/topics/translating-transcripts)
+[youtube-asr](https://github.com/topics/youtube-asr)
+
+### Resources
+Readme
+
+### License
+MIT license
+[Activity](https://github.com/jdepoix/youtube-transcript-api/activity)
+
+### Stars
+[3.6k
+      stars](https://github.com/jdepoix/youtube-transcript-api/stargazers)
+
+### Watchers
+[37
+      watching](https://github.com/jdepoix/youtube-transcript-api/watchers)
+
+### Forks
+[417
+      forks](https://github.com/jdepoix/youtube-transcript-api/forks)
+[Report repository](https://github.com/contact/report-content?content_url=https%3A%2F%2Fgithub.com%2Fjdepoix%2Fyoutube-transcript-api&report=jdepoix+%28user%29)
+
+## [Releases
+26](https://github.com/jdepoix/youtube-transcript-api/releases)
+[Releases
+      26](https://github.com/jdepoix/youtube-transcript-api/releases)
+[v1.0.1
+
+          Latest
+
+      Mar 12, 2025](https://github.com/jdepoix/youtube-transcript-api/releases/tag/v1.0.1)
+[+ 25 releases](https://github.com/jdepoix/youtube-transcript-api/releases)
+
+## Sponsor this project
+- 
+
+
+
+
+            [https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BAENLEW8VUJ6G&source=url](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BAENLEW8VUJ6G&source=url)
+
+
+[https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BAENLEW8VUJ6G&source=url](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BAENLEW8VUJ6G&source=url)
+[Learn more about GitHub Sponsors](https://github.com/sponsors)
+
+## [Used by 11.6k](https://github.com/jdepoix/youtube-transcript-api/network/dependents)
+[Used by 11.6k](https://github.com/jdepoix/youtube-transcript-api/network/dependents)
+[+ 11,550](https://github.com/jdepoix/youtube-transcript-api/network/dependents)
+
+## [Contributors
+17](https://github.com/jdepoix/youtube-transcript-api/graphs/contributors)
+[Contributors
+      17](https://github.com/jdepoix/youtube-transcript-api/graphs/contributors)
+[+ 3 contributors](https://github.com/jdepoix/youtube-transcript-api/graphs/contributors)
+
+## Languages
+- 
+        [Python
+          100.0%](https://github.com/jdepoix/youtube-transcript-api/search?l=python)
+
+[Python
+          100.0%](https://github.com/jdepoix/youtube-transcript-api/search?l=python)
+
+### Footer navigation
+
+- 
+            [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+
+- 
+            [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+
+- 
+            [Security](https://github.com/security)
+
+- 
+            [Status](https://www.githubstatus.com/)
+
+- 
+            [Docs](https://docs.github.com/)
+
+- 
+            [Contact](https://support.github.com?tags=dotcom-footer)
+
+- 
+
+
+      Manage cookies
+
+
+
+- 
+
+
+      Do not share my personal information
+
+
+
+[Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
+[Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
+[Security](https://github.com/security)
+[Status](https://www.githubstatus.com/)
+[Docs](https://docs.github.com/)
+[Contact](https://support.github.com?tags=dotcom-footer)

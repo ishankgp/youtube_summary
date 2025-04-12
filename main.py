@@ -38,10 +38,11 @@ class TranscriptRequest(BaseModel):
     )
 
 class TranscriptData(BaseModel):
-    text: str
+    transcript: str
     language: str
     duration: float
-    url: str
+    translated: bool = False
+    original_language: Optional[str] = None
 
 class TranscriptResponse(BaseModel):
     transcripts: Dict[str, TranscriptData]
@@ -87,10 +88,11 @@ async def fetch_transcripts(request: TranscriptRequest):
                 )
                 
                 all_transcripts[url] = TranscriptData(
-                    text=transcript_data["text"],
+                    transcript=transcript_data["text"],
                     language=transcript_data["language"],
                     duration=transcript_data["duration"],
-                    url=url
+                    translated=transcript_data.get("translated", False),
+                    original_language=transcript_data.get("original_language")
                 )
                 
                 logger.info(f"Successfully fetched transcript for URL: {url}")
@@ -184,4 +186,4 @@ async def refine_summary(request: RefineRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
