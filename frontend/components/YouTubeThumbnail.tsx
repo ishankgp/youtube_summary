@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { extractYouTubeVideoId } from '@/lib/utils';
+import { extractYouTubeVideoId } from '../lib/utils';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { X } from 'lucide-react';
