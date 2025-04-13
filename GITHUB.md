@@ -54,6 +54,94 @@ git add .
 git status    # After staging, before commit
 ```
 
+## Working with Branches
+
+Branches let you work on experimental features without affecting the main codebase.
+
+### Creating and Using the Experimental Branch
+
+1. **Create an experimental branch from main**:
+```powershell
+# Make sure you're on main first
+git checkout main
+
+# Create and switch to a new experimental branch
+git checkout -b experimental
+
+# Push the new branch to GitHub
+git push -u origin experimental
+```
+
+2. **Switching between branches**:
+```powershell
+# Switch to main branch
+git checkout main
+
+# Switch to experimental branch
+git checkout experimental
+```
+
+3. **Getting status of current branch**:
+```powershell
+# See what branch you're on and file status
+git status
+
+# See all branches (current branch marked with *)
+git branch
+```
+
+4. **Committing changes on experimental branch**:
+```powershell
+# While on experimental branch
+git add .
+git commit -m "feat: experimental feature"
+git push origin experimental
+```
+
+5. **Updating experimental with changes from main**:
+```powershell
+# First switch to experimental
+git checkout experimental
+
+# Pull changes from main into experimental
+git merge main
+
+# Or use rebase for cleaner history
+git rebase main
+```
+
+6. **Bringing successful experiments to main**:
+```powershell
+# First switch to main
+git checkout main
+
+# Merge experimental changes into main
+git merge experimental
+
+# Push the updated main
+git push origin main
+```
+
+### Branch Safety Tips
+
+1. **Always know which branch you're on** before making changes:
+```powershell
+git status  # Shows current branch at the top
+```
+
+2. **Commit your changes** before switching branches to avoid losing work.
+
+3. **Create a new branch** when trying risky changes:
+```powershell
+git checkout -b risky-idea
+```
+
+4. **Discard experimental changes** if needed:
+```powershell
+# Hard reset to remove unpushed commits (CAUTION: Destroys changes)
+git reset --hard origin/experimental
+```
+
 ## Commit Message Types
 
 Use these prefixes for clear, consistent commit messages:
@@ -133,4 +221,4 @@ git config --global http.lowSpeedTime 300
 4. **Regular Commits**
    - Commit related changes together
    - Keep commits focused and atomic
-   - Push regularly to avoid large divergence 
+   - Push regularly to avoid large divergence
