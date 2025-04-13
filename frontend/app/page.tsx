@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs-fixed"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Layout from "../components/Layout"
 import UrlInput from "../components/UrlInput"
@@ -10,7 +10,16 @@ import TranscriptDisplay from "../components/TranscriptDisplay"
 import SummaryPrompt from "../components/SummaryPrompt"
 import SummaryOutput from "../components/SummaryOutput"
 import StatusIndicator from "../components/StatusIndicator"
-import { api, TranscriptData } from "../lib/api"
+import { api } from "../components/api"
+
+// Create a compatible TranscriptData type
+type TranscriptData = {
+  transcript: string;
+  language: string;
+  duration: number;
+  translated: boolean;
+  original_language?: string;
+};
 
 type ProcessingStep = 'idle' | 'fetching_transcripts' | 'generating_summary' | 'regenerating_summary' | 'error' | 'success';
 
