@@ -22,6 +22,7 @@
 ### Component Structure
 1. **File Organization**
    - Components in `/components` directory
+   - UI components in `/components/ui` directory
    - Utilities in `/lib` directory
    - Pages in `/app` directory
    - Types in separate `.d.ts` files
@@ -78,6 +79,24 @@
    - Proper button roles
    - Loading state indicators
 
+## Configuration and Dependencies
+1. **TypeScript Configuration**
+   - Keep `tsconfig.json` as the main TypeScript config
+   - Use proper path aliases for imports (`@/components/`)
+   - Don't remove TypeScript configuration without verification
+
+2. **Dependency Management**
+   - Check component usage before removing dependencies
+   - Keep UI dependencies in sync with component usage
+   - Test builds locally before pushing changes
+   - Document all major dependency changes
+
+3. **Import Rules**
+   - Use `@/components/ui/` for UI component imports
+   - Use `@/lib/` for utility functions
+   - Use `@/app/` for page components
+   - Verify import paths match file structure
+
 ## Common Mistakes to Avoid
 1. **Formatting**
    - ❌ Don't make key points bold
@@ -89,4 +108,11 @@
    - ❌ Don't mix presentation and business logic
    - ❌ Don't use inline styles (use Tailwind)
    - ✅ Use proper TypeScript types
-   - ✅ Handle loading states properly 
+   - ✅ Handle loading states properly
+
+3. **Configuration**
+   - ❌ Don't remove dependencies without checking usage
+   - ❌ Don't modify import paths without updating config
+   - ❌ Don't change TypeScript config without testing
+   - ✅ Verify all changes locally before pushing
+   - ✅ Keep UI dependencies in sync with components 
