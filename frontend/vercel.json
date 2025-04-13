@@ -6,6 +6,6 @@
   "installCommand": "npm install --force",
   "outputDirectory": ".next",
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 } 
