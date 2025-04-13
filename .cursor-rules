@@ -1,0 +1,45 @@
+# Project Configuration Rules
+
+# Protected Files - These files should not be deleted without careful consideration
+protect:
+  - frontend/tsconfig.json
+  - frontend/package.json
+  - frontend/vercel.json
+  - frontend/.env.production
+  - frontend/.env.development
+
+# Required Directories - These directories contain essential components
+required_directories:
+  - frontend/components/ui
+  - frontend/app
+  - frontend/public
+
+# Dependencies - Core dependencies that should not be removed
+core_dependencies:
+  - typescript
+  - next
+  - react
+  - react-dom
+  - @types/node
+  - @types/react
+  - @types/react-dom
+  - @radix-ui/*
+  - lucide-react
+  - tailwindcss
+
+# Build Configuration
+build:
+  typescript_first: true
+  required_commands:
+    - npm install
+    - npm run build
+
+# Environment Variables
+env_vars:
+  required:
+    - NEXT_PUBLIC_USE_MOCK_DATA
+
+# Notes
+# - The UI components in components/ui are essential and should not be removed
+# - Path aliases (@/*) are configured in tsconfig.json and should be maintained
+# - TypeScript configuration should be kept in sync with Next.js requirements 
