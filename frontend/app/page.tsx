@@ -10,7 +10,7 @@ import TranscriptDisplay from "../components/TranscriptDisplay"
 import SummaryPrompt from "../components/SummaryPrompt"
 import SummaryOutput from "../components/SummaryOutput"
 import StatusIndicator from "../components/StatusIndicator"
-import { api, TranscriptData } from "@/lib/api"
+import { api, TranscriptData } from "../lib/api"
 
 type ProcessingStep = 'idle' | 'fetching_transcripts' | 'generating_summary' | 'regenerating_summary' | 'error' | 'success';
 
