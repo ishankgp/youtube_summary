@@ -22,7 +22,6 @@
 ### Component Structure
 1. **File Organization**
    - Components in `/components` directory
-   - UI components in `/components/ui` directory
    - Utilities in `/lib` directory
    - Pages in `/app` directory
    - Types in separate `.d.ts` files
@@ -79,46 +78,6 @@
    - Proper button roles
    - Loading state indicators
 
-## Configuration and Dependencies
-1. **TypeScript Configuration**
-   - Keep `tsconfig.json` in the root directory
-   - Use proper path aliases for imports (`@/components/`)
-   - Don't remove TypeScript configuration without verification
-   - Ensure path aliases match the actual file structure
-
-2. **Dependency Management**
-   - Check component usage before removing dependencies
-   - Keep UI dependencies in sync with component usage
-   - Test builds locally before pushing changes
-   - Document all major dependency changes
-
-3. **Import Rules**
-   - Use `@/components/ui/` for UI component imports
-   - Use `@/lib/` for utility functions
-   - Use `@/app/` for page components
-   - Verify import paths match file structure
-
-## Deployment and Build
-1. **Build Configuration**
-   - Keep `next.config.mjs` in the frontend directory
-   - Configure proper module resolution in `tsconfig.json`
-   - Ensure all UI components are properly exported
-   - Test builds locally before deployment
-
-2. **Vercel Deployment**
-   - Configure proper build settings in `vercel.json`
-   - Ensure all dependencies are listed in `package.json`
-   - Check for any missing UI components
-   - Verify path aliases in production build
-
-3. **Common Build Issues**
-   - ❌ Missing UI components in production
-   - ❌ Incorrect path aliases in `tsconfig.json`
-   - ❌ Missing dependencies in `package.json`
-   - ✅ Test builds locally first
-   - ✅ Keep UI components in sync with imports
-   - ✅ Verify all path aliases are correct
-
 ## Common Mistakes to Avoid
 1. **Formatting**
    - ❌ Don't make key points bold
@@ -130,19 +89,4 @@
    - ❌ Don't mix presentation and business logic
    - ❌ Don't use inline styles (use Tailwind)
    - ✅ Use proper TypeScript types
-   - ✅ Handle loading states properly
-
-3. **Configuration**
-   - ❌ Don't remove dependencies without checking usage
-   - ❌ Don't modify import paths without updating config
-   - ❌ Don't change TypeScript config without testing
-   - ✅ Verify all changes locally before pushing
-   - ✅ Keep UI dependencies in sync with components
-
-4. **Deployment**
-   - ❌ Don't deploy without local testing
-   - ❌ Don't ignore build warnings
-   - ❌ Don't modify production config without testing
-   - ✅ Test all changes locally first
-   - ✅ Keep deployment config up to date
-   - ✅ Monitor build logs for errors 
+   - ✅ Handle loading states properly 
