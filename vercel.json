@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "buildCommand": "cd frontend && npm install --save-dev typescript @types/node @types/react @types/react-dom && npm install --force && npm run build",
+  "devCommand": "cd frontend && npm run dev",
+  "installCommand": "cd frontend && npm install --force",
+  "outputDirectory": "frontend/.next",
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+} 
