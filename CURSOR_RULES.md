@@ -21,9 +21,9 @@
 
 ### Component Structure
 1. **File Organization**
-   - Components in `/components` directory
-   - Utilities in `/lib` directory
-   - Pages in `/app` directory
+   - Components in `/frontend/my-app/components` directory
+   - Utilities in `/frontend/my-app/lib` directory
+   - Pages in `/frontend/my-app/app` directory
    - Types in separate `.d.ts` files
 
 2. **Component Naming**
@@ -55,6 +55,18 @@
    - Memoize expensive computations
    - Use proper key props in lists
    - Avoid unnecessary re-renders
+
+## Application Structure
+1. **Frontend Structure**
+   - Only one Next.js app in `/frontend/my-app`
+   - All UI components in `/frontend/my-app/components/ui`
+   - All business components in `/frontend/my-app/components`
+   - Library utilities in `/frontend/my-app/lib`
+
+2. **Backend Integration**
+   - API routes configured in `next.config.js`
+   - Backend URL stored in environment variables
+   - Proper error handling for API requests
 
 ## Error Handling
 1. **API Errors**
@@ -89,4 +101,10 @@
    - ❌ Don't mix presentation and business logic
    - ❌ Don't use inline styles (use Tailwind)
    - ✅ Use proper TypeScript types
-   - ✅ Handle loading states properly 
+   - ✅ Handle loading states properly
+
+3. **Project Structure**
+   - ❌ Don't create multiple Next.js apps in frontend
+   - ❌ Don't duplicate UI components
+   - ✅ Keep one organized Next.js app in `/frontend/my-app`
+   - ✅ Follow the defined folder structure 

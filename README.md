@@ -1,6 +1,67 @@
-# YouTube Transcript Processor
+# YouTube Transcript Processor and Summarizer
 
-A modern web application that processes YouTube video transcripts and generates concise, well-structured summaries using AI. Built with Next.js, TypeScript, and Tailwind CSS.
+This project consists of a Python backend and Next.js frontend for processing YouTube video transcripts and generating AI summaries.
+
+## Project Structure
+
+- `/frontend/my-app` - Next.js frontend application
+- `/` - Python backend API
+
+## Getting Started
+
+### Backend
+
+1. Install Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the backend server:
+
+```bash
+python main.py
+```
+
+The backend server will run on http://localhost:5000 by default.
+
+### Frontend
+
+1. Navigate to the frontend directory:
+
+```bash
+cd frontend/my-app
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+```
+
+The frontend will be available at http://localhost:3000.
+
+## Features
+
+- Process YouTube video transcripts
+- Generate AI summaries of video content
+- Display transcripts with timestamps
+- Refine summaries with user feedback
+- Support for multiple videos at once
+
+## License
+
+See the LICENSE file for details.
+
+## Contributing
+
+Contributions are welcome. Please open an issue or submit a pull request.
 
 ## 🌟 Features
 
@@ -34,40 +95,6 @@ A modern web application that processes YouTube video transcripts and generates 
 ![Refinement Panel](./docs/images/refinement-panel.png)
 *Customize and refine the generated summaries*
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18.x or higher
-- npm or yarn
-- A modern web browser
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/youtube_summary.git
-cd youtube_summary
-```
-
-2. Install dependencies:
-```bash
-# Install frontend dependencies
-cd frontend/my-app
-npm install
-# or
-yarn install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
 ## 🛠️ Tech Stack
 
 - **Frontend**:
@@ -91,20 +118,6 @@ yarn dev
 - **Transcript View**: Displays timestamped transcripts
 - **Summary Output**: Well-formatted summary with sections
 - **Refinement Panel**: Tools for customizing summaries
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
