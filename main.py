@@ -6,6 +6,7 @@ from transcript_available import get_transcript, TranscriptError
 from ai_handler import AIHandler
 import logging
 from enum import Enum
+import os
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -13,10 +14,13 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-# Configure CORS
+# Get port from environment variable for Railway
+port = int(os.environ.get("PORT", 8001))
+
+# Configure CORS with more flexible allow_origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"],  # Frontend URLs
+    allow_origins=["http://localhost:3000", "http://localhost:3001", "https://*.vercel.app", "*"],  # Add production domains
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -24,6 +28,12 @@ app.add_middleware(
 
 # Initialize AI Handler
 ai_handler = AIHandler()
+
+# Add a root route for health check
+@app.get("/")
+async def read_root():
+    """Health check endpoint"""
+    return {"status": "ok", "message": "YouTube Transcript Processor API is running"}
 
 class TranscriptLanguage(str, Enum):
     ENGLISH = "en"
@@ -186,4 +196,4 @@ async def refine_summary(request: RefineRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    uvicorn.run(app, host="0.0.0.0", port=port)

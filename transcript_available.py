@@ -134,7 +134,37 @@ def get_transcript(
         
         # Get the actual transcript data
         try:
-            transcript_data = transcript.fetch()
+            # Updated: Handle transcript data properly for newer version of the API
+            transcript_data = []
+            fetched_transcript = transcript.fetch()
+            
+            # Check if fetched_transcript is already a list
+            if isinstance(fetched_transcript, list):
+                transcript_data = fetched_transcript
+            else:
+                # Otherwise, try to iterate through it - newer API versions
+                # may return an iterator instead of a list
+                try:
+                    for entry in fetched_transcript:
+                        # Make sure each entry has the necessary fields
+                        if hasattr(entry, 'start') and hasattr(entry, 'duration') and hasattr(entry, 'text'):
+                            transcript_data.append({
+                                'start': entry.start,
+                                'duration': entry.duration,
+                                'text': entry.text
+                            })
+                        elif isinstance(entry, dict) and 'start' in entry and 'duration' in entry and 'text' in entry:
+                            transcript_data.append(entry)
+                except TypeError:
+                    # If not iterable, try direct access
+                    logger.warning("Transcript data not iterable, trying direct access")
+                    if hasattr(fetched_transcript, 'transcript'):
+                        for item in fetched_transcript.transcript:
+                            transcript_data.append(item)
+            
+            if not transcript_data:
+                raise TranscriptError("Couldn't extract transcript data")
+            
             logger.info("Successfully fetched transcript data")
         except Exception as e:
             logger.error(f"Error fetching transcript data: {str(e)}")
@@ -144,13 +174,27 @@ def get_transcript(
         duration = 0
         if transcript_data:
             last_entry = transcript_data[-1]
-            duration = float(last_entry['start']) + float(last_entry['duration'])
+            # Check if last_entry is a dict or an object
+            if isinstance(last_entry, dict):
+                start = float(last_entry['start'])
+                entry_duration = float(last_entry['duration'])
+            else:
+                start = float(last_entry.start if hasattr(last_entry, 'start') else 0)
+                entry_duration = float(last_entry.duration if hasattr(last_entry, 'duration') else 0)
+            
+            duration = start + entry_duration
         
         # Combine transcript entries into a single string with timestamps
         full_transcript = ""
         for entry in transcript_data:
-            timestamp = format_duration(float(entry['start']))
-            text = entry['text'].strip()
+            # Handle both dict and object formats
+            if isinstance(entry, dict):
+                timestamp = format_duration(float(entry['start']))
+                text = entry['text'].strip()
+            else:
+                timestamp = format_duration(float(entry.start if hasattr(entry, 'start') else 0))
+                text = entry.text.strip() if hasattr(entry, 'text') else ""
+            
             if text:
                 full_transcript += f"[{timestamp}] {text}\n"
         
@@ -170,14 +214,45 @@ def get_transcript(
                 translation_languages = transcript_list.translation_languages
                 logger.info(f"Available translation languages: {translation_languages}")
                 
-                if preferred_language.value in translation_languages:
-                    translated_transcript = transcript.translate(preferred_language.value).fetch()
+                if preferred_language.value in [lang for lang in translation_languages]:
+                    translated_transcript_obj = transcript.translate(preferred_language.value)
+                    translated_transcript = translated_transcript_obj.fetch()
                     translated_text = ""
-                    for entry in translated_transcript:
-                        timestamp = format_duration(float(entry['start']))
-                        text = entry['text'].strip()
-                        if text:
-                            translated_text += f"[{timestamp}] {text}\n"
+                    
+                    # Process translated transcript with same approach as original
+                    if isinstance(translated_transcript, list):
+                        for entry in translated_transcript:
+                            if isinstance(entry, dict):
+                                timestamp = format_duration(float(entry['start']))
+                                text = entry['text'].strip()
+                            else:
+                                timestamp = format_duration(float(entry.start if hasattr(entry, 'start') else 0))
+                                text = entry.text.strip() if hasattr(entry, 'text') else ""
+                            
+                            if text:
+                                translated_text += f"[{timestamp}] {text}\n"
+                    else:
+                        # Handle object-style transcript
+                        try:
+                            for entry in translated_transcript:
+                                timestamp = format_duration(float(entry.start if hasattr(entry, 'start') else 0))
+                                text = entry.text.strip() if hasattr(entry, 'text') else ""
+                                if text:
+                                    translated_text += f"[{timestamp}] {text}\n"
+                        except TypeError:
+                            logger.warning("Translated transcript not iterable, trying direct access")
+                            # Maybe it has a transcript property
+                            if hasattr(translated_transcript, 'transcript'):
+                                for item in translated_transcript.transcript:
+                                    if isinstance(item, dict):
+                                        timestamp = format_duration(float(item['start']))
+                                        text = item['text'].strip()
+                                    else:
+                                        timestamp = format_duration(float(item.start if hasattr(item, 'start') else 0))
+                                        text = item.text.strip() if hasattr(item, 'text') else ""
+                                    
+                                    if text:
+                                        translated_text += f"[{timestamp}] {text}\n"
                     
                     result.update({
                         "text": translated_text.strip(),
