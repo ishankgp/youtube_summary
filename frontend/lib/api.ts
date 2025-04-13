@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // Add type declaration for process.env
 declare global {
   namespace NodeJS {
@@ -303,6 +305,54 @@ export async function generateSummary(
     return {
       success: false,
       error: 'Network error when generating summary'
+    };
+  }
+}
+
+export interface ApiResponse {
+  success: boolean;
+  data?: unknown;
+  error?: string;
+}
+
+export async function processVideo(url: string): Promise<ApiResponse> {
+  try {
+    const response = await axios.post('/api/process', { url });
+    return {
+      success: true,
+      data: response.data
+    };
+  } catch (error) {
+    if (error instanceof Error) {
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+    return {
+      success: false,
+      error: 'An unknown error occurred'
+    };
+  }
+}
+
+export async function refineSummary(summary: string, feedback: string): Promise<ApiResponse> {
+  try {
+    const response = await axios.post('/api/refine', { summary, feedback });
+    return {
+      success: true,
+      data: response.data
+    };
+  } catch (error) {
+    if (error instanceof Error) {
+      return {
+        success: false,
+        error: error.message
+      };
+    }
+    return {
+      success: false,
+      error: 'An unknown error occurred'
     };
   }
 } 

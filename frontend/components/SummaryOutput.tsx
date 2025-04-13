@@ -32,6 +32,8 @@ interface SummaryOutputProps {
   prompt: string;
   onRefine: (feedback: string) => Promise<void>;
   disabled?: boolean;
+  onPromptChange: (value: string) => void;
+  isLoading: boolean;
 }
 
 const sectionIcons: Record<string, React.ReactNode> = {
@@ -72,6 +74,8 @@ export default function SummaryOutput({
   prompt,
   onRefine,
   disabled,
+  onPromptChange,
+  isLoading,
 }: SummaryOutputProps) {
   const [feedback, setFeedback] = useState('');
   const [isRefining, setIsRefining] = useState(false);
@@ -435,114 +439,35 @@ export default function SummaryOutput({
   };
 
   return (
-    <div className="w-full space-y-6">
-      <Card className="p-6">
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-lg font-semibold">Generated Summary</h3>
-          <div className="flex gap-2">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handleCopy}
-            className="h-8 w-8"
-          >
-            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-          </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Copy to clipboard</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={handleExport}
-            className="h-8 w-8"
-          >
-            <Download className="h-4 w-4" />
-          </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Export as text</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-          <Button
-                    variant="outline"
-            size="icon"
-                    onClick={() => setShowRefinement(!showRefinement)}
-                    className="h-8 w-8"
-          >
-                    {showRefinement ? (
-                      <X className="h-4 w-4" />
-            ) : (
-                      <RefreshCw className="h-4 w-4" />
-            )}
-          </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{showRefinement ? 'Cancel refinement' : 'Refine summary'}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-        </div>
-
-        <div className="prose prose-sm max-w-none">
-          {renderSection(summary)}
-        </div>
-
-        {showRefinement && (
-          <>
-            <Separator className="my-6" />
-          <div className="space-y-4">
-            <Textarea
-                placeholder="Enter your feedback to refine the summary..."
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
-                className="min-h-[100px]"
-              />
-              <div className="flex justify-end gap-2">
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setShowRefinement(false);
-                    setFeedback('');
-                  }}
-                  disabled={isRefining}
-                >
-                  Cancel
-                </Button>
+    <Card className="p-4 space-y-4">
+      <div className="flex justify-between items-center">
+        <h2 className="text-xl font-semibold">Summary</h2>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
               <Button
-                onClick={handleRefine}
-                  disabled={!feedback.trim() || isRefining}
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8"
+                onClick={handleCopy}
+                disabled={!summary || isLoading}
               >
-                {isRefining ? (
-                  <>
-                    <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                    Refining...
-                  </>
-                ) : (
-                  'Refine Summary'
-                )}
+                <Copy className="h-4 w-4" />
               </Button>
-              </div>
-            </div>
-          </>
-        )}
-      </Card>
-    </div>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Copy to clipboard</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
+      <Textarea
+        value={summary}
+        onChange={(e) => onPromptChange(e.target.value)}
+        placeholder="Summary will appear here..."
+        className="min-h-[200px] resize-none"
+        readOnly={isLoading}
+      />
+    </Card>
   );
 }
