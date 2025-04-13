@@ -19,14 +19,14 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@/components/*": ["./components/*"],
-      "@/components/ui/*": ["./components/ui/*"],
-      "@/lib/*": ["./lib/*"],
-      "@/app/*": ["./app/*"]
+      "@/*": ["./frontend/*"],
+      "@/components/*": ["./frontend/components/*"],
+      "@/components/ui/*": ["./frontend/components/ui/*"],
+      "@/lib/*": ["./frontend/lib/*"],
+      "@/app/*": ["./frontend/app/*"]
     },
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["frontend/next-env.d.ts", "frontend/**/*.ts", "frontend/**/*.tsx", "frontend/.next/types/**/*.ts"],
   "exclude": ["node_modules"]
-}
+} 
