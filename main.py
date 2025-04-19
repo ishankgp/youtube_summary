@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import List, Dict, Optional
-from transcript_available import get_transcript, TranscriptError
+from transcript_available import get_transcript, TranscriptError, extract_video_id
 from ai_handler import AIHandler
 import logging
 from enum import Enum
@@ -89,78 +89,34 @@ class RefineRequest(BaseModel):
 
 @app.post("/api/transcripts", response_model=TranscriptResponse)
 async def fetch_transcripts(request: TranscriptRequest):
-    """
-    Fetch transcripts for multiple YouTube videos.
-    Handles language preferences and provides detailed error information.
-    """
+    """Fetch transcripts for the given YouTube URLs"""
     try:
-        # Add diagnostic logging
-        logger.info("Starting transcript fetch with network diagnostics")
-        logger.info(f"Environment: Railway (PORT={port})")
-        logger.info(f"Python version: {sys.version}")
-        
-        all_transcripts = {}
+        transcripts = {}
         failed_urls = []
         
         for url in request.urls:
-            for attempt in range(3):  # Try each URL up to 3 times
-                try:
-                    logger.info(f"Fetching transcript for URL: {url} (Attempt {attempt + 1}/3)")
-                    
-                    # Add request context logging
-                    logger.info(f"Request context: language={request.preferred_language}")
-                    
-                    transcript_data = get_transcript(
-                        url, 
-                        preferred_language=request.preferred_language,
-                        max_retries=1  # Single retry per attempt here since we're already retrying
-                    )
-                    
-                    all_transcripts[url] = TranscriptData(
-                        transcript=transcript_data["text"],
-                        language=transcript_data["language"],
-                        duration=transcript_data["duration"],
-                        translated=transcript_data.get("translated", False),
-                        original_language=transcript_data.get("original_language"),
-                        is_generated=transcript_data.get("is_generated", False)
-                    )
-                    
-                    logger.info(f"Successfully fetched transcript for URL: {url}")
-                    break  # Success, exit retry loop
-                    
-                except TranscriptError as e:
-                    error_msg = f"Error processing {url} (Attempt {attempt + 1}): {str(e)}"
-                    logger.error(error_msg)
-                    if attempt == 2:  # Last attempt failed
-                        failed_urls.append({"url": url, "error": str(e)})
-                    else:
-                        time.sleep(2 ** attempt)  # Exponential backoff
-                except Exception as e:
-                    error_msg = f"Unexpected error processing {url} (Attempt {attempt + 1}): {str(e)}"
-                    logger.error(error_msg)
-                    if attempt == 2:  # Last attempt failed
-                        failed_urls.append({"url": url, "error": str(e)})
-                    else:
-                        time.sleep(2 ** attempt)  # Exponential backoff
-
-        if not all_transcripts:
-            if failed_urls:
-                error_details = "\n".join([f"{item['url']}: {item['error']}" for item in failed_urls])
-                raise HTTPException(
-                    status_code=400,
-                    detail=f"Failed to process all URLs:\n{error_details}"
+            try:
+                video_id = extract_video_id(url)
+                language = request.preferred_language.value if request.preferred_language != "auto" else None
+                transcript_text, detected_language = get_transcript(video_id, language)
+                
+                transcripts[url] = TranscriptData(
+                    transcript=transcript_text,
+                    language=detected_language,
+                    duration=0.0,  # Duration will be added later if needed
+                    translated=False,
+                    original_language=None,
+                    is_generated=True
                 )
-            raise HTTPException(
-                status_code=400,
-                detail="No valid transcripts found"
-            )
-
+            except Exception as e:
+                logger.error(f"Error processing URL {url}: {str(e)}")
+                failed_urls.append({"url": url, "error": str(e)})
+        
         return TranscriptResponse(
-            transcripts=all_transcripts,
-            status="success",
+            transcripts=transcripts,
+            status="success" if not failed_urls else "partial",
             failed_urls=failed_urls if failed_urls else None
         )
-
     except Exception as e:
         logger.error(f"Error in fetch_transcripts: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
