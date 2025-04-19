@@ -28,4 +28,4 @@ HEALTHCHECK --interval=5s --timeout=3s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:${PORT:-8080}/ || exit 1
 
 # Run with explicit port binding
-CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8080} --log-level debug 
+CMD uvicorn main:app --host 0.0.0.0 --port $PORT --log-level debug 
