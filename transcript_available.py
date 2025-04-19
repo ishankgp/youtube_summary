@@ -1,4 +1,5 @@
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
+from youtube_transcript_api.proxies import WebshareProxyConfig
 from typing import Optional, List, Dict, Union, Tuple
 from enum import Enum
 import re
@@ -14,24 +15,21 @@ import random
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-# Get proxy list from environment
-PROXY_LIST = os.getenv("PROXY_LIST", "").split(",") if os.getenv("PROXY_LIST") else []
-if not PROXY_LIST and os.environ.get("RAILWAY_ENVIRONMENT"):
-    logger.warning("No proxies configured. YouTube may block requests from Railway's IP.")
-
-def get_random_proxy() -> Optional[Dict[str, str]]:
-    """Get a random proxy from the environment-configured list"""
-    if not PROXY_LIST:
-        return None
+def get_proxy_config() -> Optional[WebshareProxyConfig]:
+    """Get Webshare proxy configuration from environment variables"""
+    webshare_username = os.getenv("WEBSHARE_USERNAME")
+    webshare_password = os.getenv("WEBSHARE_PASSWORD")
     
-    proxy = random.choice([p for p in PROXY_LIST if p.strip()])
-    if not proxy:
-        return None
-        
-    return {
-        "http": f"http://{proxy}",
-        "https": f"https://{proxy}"
-    }
+    if webshare_username and webshare_password:
+        logger.info("Using Webshare proxy configuration")
+        return WebshareProxyConfig(
+            proxy_username=webshare_username,
+            proxy_password=webshare_password
+        )
+    
+    if os.environ.get("RAILWAY_ENVIRONMENT"):
+        logger.warning("No Webshare proxy credentials configured. YouTube may block requests from Railway's IP.")
+    return None
 
 class TranscriptError(Exception):
     """Custom exception for transcript-related errors."""
@@ -73,10 +71,14 @@ def extract_video_id(url: str) -> str:
 def get_transcript(video_id: str, language: str = None, retries: int = 3) -> Tuple[str, str]:
     logger.debug(f"Attempting to fetch transcript for video {video_id} in language {language}")
     
+    # Get proxy configuration
+    proxy_config = get_proxy_config()
+    yt_api = YouTubeTranscriptApi(proxy_config=proxy_config)
+    
     for attempt in range(retries):
         try:
             # First, get available transcripts to check languages
-            transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+            transcript_list = yt_api.list_transcripts(video_id)
             available_languages = [t.language_code for t in transcript_list._manually_created_transcripts.values()]
             available_auto = [t.language_code for t in transcript_list._generated_transcripts.values()]
             
@@ -85,10 +87,10 @@ def get_transcript(video_id: str, language: str = None, retries: int = 3) -> Tup
             
             # Try different approaches
             approaches = [
-                ("standard", lambda: YouTubeTranscriptApi.get_transcript(video_id, languages=[language] if language else None)),
-                ("cookies-disabled", lambda: YouTubeTranscriptApi.get_transcript(video_id, languages=[language] if language else None, cookies='CONSENT=YES+1')),
-                ("no-headers", lambda: YouTubeTranscriptApi.get_transcript(video_id, languages=[language] if language else None, headers={})),
-                ("minimal-headers", lambda: YouTubeTranscriptApi.get_transcript(video_id, languages=[language] if language else None, headers={'User-Agent': 'Mozilla/5.0'}))
+                ("standard", lambda: yt_api.get_transcript(video_id, languages=[language] if language else None)),
+                ("cookies-disabled", lambda: yt_api.get_transcript(video_id, languages=[language] if language else None, cookies='CONSENT=YES+1')),
+                ("no-headers", lambda: yt_api.get_transcript(video_id, languages=[language] if language else None, headers={})),
+                ("minimal-headers", lambda: yt_api.get_transcript(video_id, languages=[language] if language else None, headers={'User-Agent': 'Mozilla/5.0'}))
             ]
             
             last_error = None
@@ -151,8 +153,12 @@ def diagnose_video(video_url: str):
         video_id = extract_video_id(video_url)
         logger.info(f"Diagnosing video {video_id}")
         
+        # Get proxy configuration
+        proxy_config = get_proxy_config()
+        yt_api = YouTubeTranscriptApi(proxy_config=proxy_config)
+        
         # Get transcript list
-        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+        transcript_list = yt_api.list_transcripts(video_id)
         
         # Log manual transcripts
         manual_transcripts = transcript_list._manually_created_transcripts
