@@ -7,6 +7,8 @@ from ai_handler import AIHandler
 import logging
 from enum import Enum
 import os
+import sys
+import time
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -15,14 +17,19 @@ logger = logging.getLogger(__name__)
 app = FastAPI()
 
 # Get port from environment variable for Railway
-port = int(os.environ.get("PORT", 8001))
+port = int(os.environ.get("PORT", 8080))
 
-# Configure CORS with more flexible allow_origins
+# Configure CORS with more secure allow_origins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001", "https://*.vercel.app", "*"],  # Add production domains
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://*.vercel.app",
+        "https://youtube-summary-frontend.vercel.app"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -87,32 +94,54 @@ async def fetch_transcripts(request: TranscriptRequest):
     Handles language preferences and provides detailed error information.
     """
     try:
+        # Add diagnostic logging
+        logger.info("Starting transcript fetch with network diagnostics")
+        logger.info(f"Environment: Railway (PORT={port})")
+        logger.info(f"Python version: {sys.version}")
+        
         all_transcripts = {}
         failed_urls = []
         
         for url in request.urls:
-            try:
-                logger.info(f"Fetching transcript for URL: {url}")
-                transcript_data = get_transcript(
-                    url, 
-                    preferred_language=request.preferred_language
-                )
-                
-                all_transcripts[url] = TranscriptData(
-                    transcript=transcript_data["text"],
-                    language=transcript_data["language"],
-                    duration=transcript_data["duration"],
-                    translated=transcript_data.get("translated", False),
-                    original_language=transcript_data.get("original_language"),
-                    is_generated=transcript_data.get("is_generated", False)
-                )
-                
-                logger.info(f"Successfully fetched transcript for URL: {url}")
-                
-            except TranscriptError as e:
-                error_msg = f"Error processing {url}: {str(e)}"
-                logger.error(error_msg)
-                failed_urls.append({"url": url, "error": str(e)})
+            for attempt in range(3):  # Try each URL up to 3 times
+                try:
+                    logger.info(f"Fetching transcript for URL: {url} (Attempt {attempt + 1}/3)")
+                    
+                    # Add request context logging
+                    logger.info(f"Request context: language={request.preferred_language}")
+                    
+                    transcript_data = get_transcript(
+                        url, 
+                        preferred_language=request.preferred_language,
+                        max_retries=1  # Single retry per attempt here since we're already retrying
+                    )
+                    
+                    all_transcripts[url] = TranscriptData(
+                        transcript=transcript_data["text"],
+                        language=transcript_data["language"],
+                        duration=transcript_data["duration"],
+                        translated=transcript_data.get("translated", False),
+                        original_language=transcript_data.get("original_language"),
+                        is_generated=transcript_data.get("is_generated", False)
+                    )
+                    
+                    logger.info(f"Successfully fetched transcript for URL: {url}")
+                    break  # Success, exit retry loop
+                    
+                except TranscriptError as e:
+                    error_msg = f"Error processing {url} (Attempt {attempt + 1}): {str(e)}"
+                    logger.error(error_msg)
+                    if attempt == 2:  # Last attempt failed
+                        failed_urls.append({"url": url, "error": str(e)})
+                    else:
+                        time.sleep(2 ** attempt)  # Exponential backoff
+                except Exception as e:
+                    error_msg = f"Unexpected error processing {url} (Attempt {attempt + 1}): {str(e)}"
+                    logger.error(error_msg)
+                    if attempt == 2:  # Last attempt failed
+                        failed_urls.append({"url": url, "error": str(e)})
+                    else:
+                        time.sleep(2 ** attempt)  # Exponential backoff
 
         if not all_transcripts:
             if failed_urls:

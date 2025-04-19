@@ -108,3 +108,48 @@
    - ❌ Don't duplicate UI components
    - ✅ Keep one organized Next.js app in `/frontend/my-app`
    - ✅ Follow the defined folder structure 
+
+4. **Design Integrity**
+   - ❌ Don't modify existing UI/UX patterns without approval
+   - ❌ Don't change established design components
+   - ❌ Don't alter the existing styling system
+   - ✅ Maintain consistent design language
+   - ✅ Preserve existing component structure
+   - ✅ Make changes only in tracked Git files
+   - ✅ Test design changes in experimental branch first
+
+5. **Version Control Safety**
+   - ❌ Don't commit directly to main branch
+   - ❌ Don't force push to shared branches
+   - ❌ Don't modify .gitignore without team approval
+   - ✅ Always work in feature branches
+   - ✅ Use meaningful commit messages
+   - ✅ Review changes before pushing
+   - ✅ Keep local repository in sync with remote
+
+6. **Deployment Protection**
+   - ❌ Don't deploy without testing in experimental branch
+   - ❌ Don't modify Vercel deployment settings without documentation
+   - ❌ Don't change environment variables without backup
+   - ✅ Always verify build success locally
+   - ✅ Keep deployment configuration in version control
+   - ✅ Document all environment variables
+   - ✅ Maintain backup of working deployment settings
+
+7. **Code Safety Measures**
+   - ❌ Don't delete existing components without approval
+   - ❌ Don't modify shared utility functions without testing
+   - ❌ Don't change API integration patterns
+   - ✅ Use TypeScript strict mode
+   - ✅ Maintain test coverage
+   - ✅ Document component dependencies
+   - ✅ Keep error handling consistent
+
+8. **Frontend State Management**
+   - ❌ Don't introduce new state management libraries
+   - ❌ Don't modify existing state patterns
+   - ❌ Don't change data fetching logic
+   - ✅ Follow established state patterns
+   - ✅ Use existing hooks and utilities
+   - ✅ Maintain proper error boundaries
+   - ✅ Document state changes 

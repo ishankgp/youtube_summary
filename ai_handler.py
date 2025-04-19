@@ -24,32 +24,19 @@ genai.configure(api_key=GEMINI_API_KEY)
 
 class AIHandler:
     def __init__(self):
-        # Configure the model
-        generation_config = {
-            "temperature": 0.7,
-            "top_p": 0.8,
-            "top_k": 40,
-            "max_output_tokens": 2048,
-        }
-
-        safety_settings = [
-            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
-        ]
-
+        """Initialize the AI handler with Gemini model."""
         try:
-            self.model = genai.GenerativeModel(
-                model_name="gemini-2.0-flash-lite-preview-02-05",
-                generation_config=generation_config,
-                safety_settings=safety_settings
-            )
-            self.api_available = True
+            api_key = os.getenv("GEMINI_API_KEY")
+            if not api_key:
+                logger.warning("No Gemini API key found. Some features will be limited.")
+                self.model = None
+                return
+
+            genai.configure(api_key=api_key)
+            self.model = genai.GenerativeModel('gemini-pro')
             logger.info("Gemini AI model initialized successfully")
         except Exception as e:
-            logger.error(f"Failed to initialize Gemini model: {str(e)}")
-            self.api_available = False
+            logger.error(f"Error initializing Gemini AI model: {str(e)}")
             self.model = None
     
     def _extract_video_titles(self, transcript: str) -> List[Dict[str, str]]:
@@ -91,18 +78,14 @@ class AIHandler:
         
         return videos
 
-    async def generate_summary(self, transcript: str, prompt: str, language: str = "en") -> Dict[str, str]:
-        """
-        Generate a summary of the transcript using Gemini API.
-        Returns a structured summary with overall summary, key points, and notable quotes.
-        """
-        if not self.api_available or not self.model:
-            logger.error("Cannot generate summary: Gemini API not available")
+    async def generate_summary(self, transcript: str, prompt: str = None, language: str = "en") -> Dict[str, str]:
+        """Generate a summary of the transcript."""
+        if not self.model:
             return {
-                "summary": "Summary generation unavailable. Please set the GEMINI_API_KEY environment variable.",
+                "summary": "AI summarization is currently unavailable. Please try again later.",
                 "language": language
             }
-            
+        
         try:
             # Extract video information
             videos = self._extract_video_titles(transcript)
@@ -207,7 +190,7 @@ class AIHandler:
         Refine an existing summary based on user feedback.
         Maintains the same structured format while incorporating the feedback.
         """
-        if not self.api_available or not self.model:
+        if not self.model:
             logger.error("Cannot refine summary: Gemini API not available")
             return "Summary refinement unavailable. Please set the GEMINI_API_KEY environment variable."
             
