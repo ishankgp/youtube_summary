@@ -15,10 +15,9 @@ load_dotenv()
 # Configure Gemini API
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
-    logger.error("GEMINI_API_KEY not found in environment variables")
-    logger.info("Please create a .env file in the root directory with your Gemini API key:")
-    logger.info("GEMINI_API_KEY=your_api_key_here")
-    raise ValueError("GEMINI_API_KEY not found in environment variables. Please check .env file.")
+    logger.warning("GEMINI_API_KEY not found in environment variables")
+    logger.info("API will be unavailable for summary generation until key is provided")
+    GEMINI_API_KEY = "dummy_key_for_startup"  # Allow app to start for health checks
 
 # Configure the API
 genai.configure(api_key=GEMINI_API_KEY)
@@ -40,11 +39,18 @@ class AIHandler:
             {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
         ]
 
-        self.model = genai.GenerativeModel(
-            model_name="gemini-2.0-flash-lite-preview-02-05",
-            generation_config=generation_config,
-            safety_settings=safety_settings
-        )
+        try:
+            self.model = genai.GenerativeModel(
+                model_name="gemini-2.0-flash-lite-preview-02-05",
+                generation_config=generation_config,
+                safety_settings=safety_settings
+            )
+            self.api_available = True
+            logger.info("Gemini AI model initialized successfully")
+        except Exception as e:
+            logger.error(f"Failed to initialize Gemini model: {str(e)}")
+            self.api_available = False
+            self.model = None
     
     def _extract_video_titles(self, transcript: str) -> List[Dict[str, str]]:
         """
@@ -90,6 +96,13 @@ class AIHandler:
         Generate a summary of the transcript using Gemini API.
         Returns a structured summary with overall summary, key points, and notable quotes.
         """
+        if not self.api_available or not self.model:
+            logger.error("Cannot generate summary: Gemini API not available")
+            return {
+                "summary": "Summary generation unavailable. Please set the GEMINI_API_KEY environment variable.",
+                "language": language
+            }
+            
         try:
             # Extract video information
             videos = self._extract_video_titles(transcript)
@@ -194,6 +207,10 @@ class AIHandler:
         Refine an existing summary based on user feedback.
         Maintains the same structured format while incorporating the feedback.
         """
+        if not self.api_available or not self.model:
+            logger.error("Cannot refine summary: Gemini API not available")
+            return "Summary refinement unavailable. Please set the GEMINI_API_KEY environment variable."
+            
         try:
             system_prompt = """You are a helpful AI assistant that refines video summaries.
             Please maintain the existing structure while incorporating the feedback:
