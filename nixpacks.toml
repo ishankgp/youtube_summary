@@ -3,7 +3,7 @@ aptPkgs = ["python3", "python3-pip", "python3-dev", "build-essential"]
 nixPkgs = ["python310"]
 
 [phases.install]
-cmds = ["python -m pip install --upgrade pip"]
+cmds = ["python3 -m pip install --upgrade pip"]
 
 [phases.build]
 cmds = ["pip install -r requirements.txt"]
