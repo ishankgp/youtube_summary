@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
+    build-essential curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -17,18 +17,16 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY . .
 
 # Set environment variables
-ENV PORT=8080
 ENV PYTHONUNBUFFERED=1
 
-# Check Python and pip installations
-RUN python --version && pip --version
+# Create start script
+RUN echo '#!/bin/sh\nport=${PORT:-8080}\nexec python -m uvicorn main:app --host 0.0.0.0 --port $port --log-level info' > /app/start.sh && \
+    chmod +x /app/start.sh
 
-# Create a wrapper script to handle environment variables
-RUN echo '#!/bin/bash\n\
-port=${PORT:-8080}\n\
-echo "Starting server on port $port"\n\
-exec uvicorn main:app --host 0.0.0.0 --port $port --log-level debug\n\
-' > /app/start.sh && chmod +x /app/start.sh
+EXPOSE 8080
 
-# Run with wrapper script
+HEALTHCHECK --interval=5s --timeout=5s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:${PORT:-8080}/ || exit 1
+
+# Run the application
 CMD ["/app/start.sh"] 
