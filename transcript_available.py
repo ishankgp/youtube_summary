@@ -103,7 +103,10 @@ def get_transcript(video_id: str, language: str = None, retries: int = 3) -> Tup
                     return transcript_data, actual_language
                 except Exception as e:
                     last_error = e
-                    logger.debug(f"{approach_name} approach failed: {str(e)}")
+                    logger.error(f"{approach_name} approach failed with error: {str(e)}")
+                    logger.error(f"Error type: {type(e).__name__}")
+                    if hasattr(e, '__dict__'):
+                        logger.error(f"Error attributes: {e.__dict__}")
             
             if last_error:
                 raise last_error
@@ -115,7 +118,10 @@ def get_transcript(video_id: str, language: str = None, retries: int = 3) -> Tup
             logger.error(f"No transcript found for video {video_id} in language {language}")
             raise
         except Exception as e:
-            logger.error(f"Attempt {attempt + 1}/{retries} failed: {str(e)}")
+            logger.error(f"Attempt {attempt + 1}/{retries} failed with error: {str(e)}")
+            logger.error(f"Error type: {type(e).__name__}")
+            if hasattr(e, '__dict__'):
+                logger.error(f"Error attributes: {e.__dict__}")
             if attempt == retries - 1:
                 raise
             time.sleep(1)  # Wait before retry
