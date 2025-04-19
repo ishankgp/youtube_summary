@@ -51,8 +51,9 @@ class TranscriptData(BaseModel):
     transcript: str
     language: str
     duration: float
-    translated: bool = False
+    translated: Optional[bool] = False
     original_language: Optional[str] = None
+    is_generated: Optional[bool] = False
 
 class TranscriptResponse(BaseModel):
     transcripts: Dict[str, TranscriptData]
@@ -102,7 +103,8 @@ async def fetch_transcripts(request: TranscriptRequest):
                     language=transcript_data["language"],
                     duration=transcript_data["duration"],
                     translated=transcript_data.get("translated", False),
-                    original_language=transcript_data.get("original_language")
+                    original_language=transcript_data.get("original_language"),
+                    is_generated=transcript_data.get("is_generated", False)
                 )
                 
                 logger.info(f"Successfully fetched transcript for URL: {url}")

@@ -54,6 +54,7 @@ def get_transcript(
 ) -> Dict[str, any]:
     """
     Get transcript from YouTube video URL with language preference handling.
+    Now accepts auto-generated captions as well.
     
     Args:
         url: YouTube video URL
@@ -66,9 +67,7 @@ def get_transcript(
         - duration: Video duration in seconds
         - translated: Whether the transcript was translated
         - original_language: Original language if translated
-    
-    Raises:
-        TranscriptError: If transcript cannot be fetched or processed
+        - is_generated: Whether the transcript is auto-generated
     """
     try:
         logger.info(f"Fetching transcript for URL: {url}")
@@ -88,39 +87,64 @@ def get_transcript(
         language = None
         translated = False
         original_language = None
+        is_generated = False
         
         # Convert string to enum if needed
         if isinstance(preferred_language, str):
             preferred_language = TranscriptLanguage(preferred_language.lower())
 
         try:
-            # First try: Get transcript in preferred language
+            # First try: Get transcript in preferred language (including auto-generated)
             if preferred_language != TranscriptLanguage.AUTO:
                 try:
-                    transcript = transcript_list.find_transcript([preferred_language.value])
-                    language = preferred_language.value
-                    logger.info(f"Found transcript in preferred language: {language}")
-                except NoTranscriptFound:
+                    # Get all transcripts including auto-generated ones
+                    all_transcripts = transcript_list._manually_created_transcripts.copy()
+                    all_transcripts.update(transcript_list._generated_transcripts)
+                    
+                    # Find transcript in preferred language
+                    for lang_code, trans in all_transcripts.items():
+                        if lang_code.startswith(preferred_language.value):
+                            transcript = trans
+                            language = lang_code
+                            is_generated = lang_code in transcript_list._generated_transcripts
+                            logger.info(f"Found transcript in preferred language: {language} (auto-generated: {is_generated})")
+                            break
+                except Exception as e:
                     logger.info(f"No transcript found in preferred language: {preferred_language.value}")
 
-            # Second try: Try English or Hindi
+            # Second try: Try English or Hindi (including auto-generated)
             if not transcript:
                 for lang in [TranscriptLanguage.ENGLISH.value, TranscriptLanguage.HINDI.value]:
                     try:
-                        transcript = transcript_list.find_transcript([lang])
-                        language = lang
-                        logger.info(f"Found transcript in language: {language}")
-                        break
-                    except NoTranscriptFound:
+                        all_transcripts = transcript_list._manually_created_transcripts.copy()
+                        all_transcripts.update(transcript_list._generated_transcripts)
+                        
+                        for lang_code, trans in all_transcripts.items():
+                            if lang_code.startswith(lang):
+                                transcript = trans
+                                language = lang_code
+                                is_generated = lang_code in transcript_list._generated_transcripts
+                                logger.info(f"Found transcript in language: {language} (auto-generated: {is_generated})")
+                                break
+                        if transcript:
+                            break
+                    except Exception:
                         continue
 
-            # Third try: Get any available transcript
+            # Third try: Get any available transcript (including auto-generated)
             if not transcript:
                 try:
-                    transcript = transcript_list.find_transcript([])
-                    language = transcript.language_code
-                    logger.info(f"Found transcript in language: {language}")
-                except NoTranscriptFound:
+                    all_transcripts = transcript_list._manually_created_transcripts.copy()
+                    all_transcripts.update(transcript_list._generated_transcripts)
+                    
+                    if all_transcripts:
+                        lang_code, transcript = next(iter(all_transcripts.items()))
+                        language = lang_code
+                        is_generated = lang_code in transcript_list._generated_transcripts
+                        logger.info(f"Found transcript in language: {language} (auto-generated: {is_generated})")
+                    else:
+                        raise NoTranscriptFound("No transcript found in any language")
+                except Exception as e:
                     raise NoTranscriptFound("No transcript found in any language")
 
         except NoTranscriptFound as e:
@@ -203,7 +227,8 @@ def get_transcript(
             "language": language,
             "duration": duration,
             "translated": translated,
-            "original_language": language
+            "original_language": language,
+            "is_generated": is_generated
         }
         
         # Try translation if needed and available
