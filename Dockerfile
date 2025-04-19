@@ -23,9 +23,12 @@ ENV PYTHONUNBUFFERED=1
 # Check Python and pip installations
 RUN python --version && pip --version
 
-# Healthcheck
-HEALTHCHECK --interval=5s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:${PORT:-8080}/ || exit 1
+# Create a wrapper script to handle environment variables
+RUN echo '#!/bin/bash\n\
+port=${PORT:-8080}\n\
+echo "Starting server on port $port"\n\
+exec uvicorn main:app --host 0.0.0.0 --port $port --log-level debug\n\
+' > /app/start.sh && chmod +x /app/start.sh
 
-# Run with explicit port binding
-CMD uvicorn main:app --host 0.0.0.0 --port $PORT --log-level debug 
+# Run with wrapper script
+CMD ["/app/start.sh"] 
